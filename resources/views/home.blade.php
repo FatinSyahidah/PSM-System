@@ -6,7 +6,7 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-    <a href="home" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
 </div>
 
@@ -242,7 +242,8 @@
                 <div class="card bg-info text-white shadow">
                     <div class="card-body">
                         Info
-                        <div class="text-white-50 small">#36b9cc</div>
+                 
+                 .       <div class="text-white-50 small">#36b9cc</div>
                     </div>
                 </div>
             </div>
