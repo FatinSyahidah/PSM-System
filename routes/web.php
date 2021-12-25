@@ -15,9 +15,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Auth::routes();
 
+<<<<<<< Updated upstream
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+=======
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Manage Meeting
+
+
+//Manage Profile
+
+
+//Manage SV
+
+
+//Manage Logbook
+
+//Manage Proposal
+
+//Manage Title
+
+//Manage Inventory Usage
+
+>>>>>>> Stashed changes

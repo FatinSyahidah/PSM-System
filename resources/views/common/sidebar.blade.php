@@ -45,8 +45,13 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
+<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="true" aria-controls="collapseThree">
+=======
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+>>>>>>> Stashed changes
                     <i class="fas fa-briefcase"></i>
                     <span>Supervisor</span>
                 </a>
@@ -61,8 +66,13 @@
             </li>
 
             <li class="nav-item">
+<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">
+=======
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+>>>>>>> Stashed changes
                     <i class="fas fa-bars"></i>
                     <span>Title</span>
                 </a>
@@ -86,16 +96,21 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="#">Request Inventory</a>
-                        <a class="collapse-item" href="#">Request Status</a>
+                        <a class="collapse-item" href="RequestInventory">Request Inventory</a>
+                        <a class="collapse-item" href="RequestStatus">Request Status</a>
                         
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
+<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix"
                     aria-expanded="true" aria-controls="collapseSix">
+=======
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+>>>>>>> Stashed changes
                     <i class="fas fa-book"></i>
                     <span>Logbook</span>
                 </a>
@@ -110,8 +125,13 @@
             </li>
 
             <li class="nav-item">
+<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeven"
                     aria-expanded="true" aria-controls="collapseSeven">
+=======
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+>>>>>>> Stashed changes
                     <i class="fas fa-copy"></i>
                     <span>Proposal</span>
                 </a>
@@ -126,8 +146,13 @@
             </li>
 
             <li class="nav-item">
+<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEight"
                     aria-expanded="true" aria-controls="collapseEight">
+=======
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+>>>>>>> Stashed changes
                     <i class="fas fa-pen-square"></i>
                     <span>Meeting</span>
                 </a>
@@ -152,3 +177,19 @@
             
             
         </ul>
+     <!-- Bootstrap core JavaScript-->
+     <script src="{{asset('admin/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{asset('admin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{asset('admin/js/sb-admin-2.min.js')}}"></script>
+
+    <!-- Page level plugins -->
+    <script src="{{asset('admin/vendor/chart.js/Chart.min.js')}}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{asset('admin/js/demo/chart-area-demo.j')}}s"></script>
+    <script src="{{asset('admin/js/demo/chart-pie-demo.js')}}"></script>
