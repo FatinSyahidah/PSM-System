@@ -20,9 +20,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-<<<<<<< Updated upstream
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
+
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Manage Meeting
@@ -42,4 +41,3 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name(
 
 //Manage Inventory Usage
 
->>>>>>> Stashed changes
