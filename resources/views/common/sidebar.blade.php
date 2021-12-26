@@ -45,13 +45,8 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="true" aria-controls="collapseThree">
-=======
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
->>>>>>> Stashed changes
                     <i class="fas fa-briefcase"></i>
                     <span>Supervisor</span>
                 </a>
@@ -66,13 +61,8 @@
             </li>
 
             <li class="nav-item">
-<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">
-=======
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
->>>>>>> Stashed changes
                     <i class="fas fa-bars"></i>
                     <span>Title</span>
                 </a>
@@ -104,13 +94,8 @@
             </li>
 
             <li class="nav-item">
-<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix"
                     aria-expanded="true" aria-controls="collapseSix">
-=======
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
->>>>>>> Stashed changes
                     <i class="fas fa-book"></i>
                     <span>Logbook</span>
                 </a>
@@ -125,13 +110,8 @@
             </li>
 
             <li class="nav-item">
-<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeven"
                     aria-expanded="true" aria-controls="collapseSeven">
-=======
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
->>>>>>> Stashed changes
                     <i class="fas fa-copy"></i>
                     <span>Proposal</span>
                 </a>
@@ -146,13 +126,8 @@
             </li>
 
             <li class="nav-item">
-<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEight"
                     aria-expanded="true" aria-controls="collapseEight">
-=======
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
->>>>>>> Stashed changes
                     <i class="fas fa-pen-square"></i>
                     <span>Meeting</span>
                 </a>
