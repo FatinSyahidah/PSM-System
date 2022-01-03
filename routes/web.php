@@ -40,4 +40,11 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name(
 //Manage Title
 
 //Manage Inventory Usage
+Route::get('RequestInventory', function () {
+    return view('Manage Inventory Usage/RequestInventory');
+});
+
+Route::get('RequestStatus', function () {
+    return view('Manage Inventory Usage/RequestStatus');
+});
 
