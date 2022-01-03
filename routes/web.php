@@ -36,6 +36,13 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name(
 //Manage Logbook
 
 //Manage Proposal
+Route::get('LectMainPg', function () {
+    return view('Manage Proposal/LectMainPg');
+});
+
+Route::get('StdMainPg', function () {
+    return view('Manage Proposal/StdMainPg');
+});
 
 //Manage Title
 
