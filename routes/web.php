@@ -28,7 +28,13 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name(
 
 
 //Manage Profile
+Route::get('ProfileViewStudent', function() {
+    return view('Manage Profile/ProfileViewStudent');
+});
 
+Route::get('ProfileViewLecturer', function(){
+    return view('Manage Profile/ProfileViewLecturer');
+});
 
 //Manage SV
 
