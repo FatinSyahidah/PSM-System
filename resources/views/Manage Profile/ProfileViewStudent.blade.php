@@ -21,25 +21,97 @@
     </head>
 
     <body> 
-        <div class = "container">
+      <div class = "container">
 
 
-            <div class = "row">
+     <div class = "row">
                 <div class="col-6">
-                    <h2 style="color:black">My Profile</h2>
-                </div> 
+                    <h2 style="color:b lack">My Profile</h2>
+                </div>
+        </div> 
+        <div style ="margin-left:40px; margin-left: 2em;">
+            <img src="prof pic.jpg"  style="height:106px;width:106px"
+                alt="Avatar" title="Profile picture to show customised image">
+            </div>
 
-                <div class="col-6">
+        
+           <div style ="margin-left: 50px; margin-left: 12em;">
+               <table>
+                   <tr>
+                       <td>Name:&emsp;</td>
+                       <td><input type=" " name=" " value=" " readonly></td>
+                   </tr>
+                   <tr>
+                       <td>Matric ID:&emsp;</td>
+                       <td><input type=" " name=" " value=" " readonly></td>
+                   </tr>
+                   <tr>
+                       <td>Course:&emsp;</td>
+                       <td><input type=" " name=" " value=" " readonly></td>
+                   </tr>
+                   <tr>
+                       <td>Year of Study:&emsp;</td>
+                       <td><input type=" " name=" " value=" " readonly></td>
+                   </tr>
+                   <tr>
+                       <td>Phone Number:&emsp;</td>
+                       <td><input type=" " name=" " value=" " readonly></td>
+                   </tr>
+                   <tr>
+                       <td>Email:&emsp;</td>
+                       <td><input type=" " name=" " value=" " readonly></td>
+                   </tr>
+                   <tr>
+                       <td>Address:&emsp;</td>
+                       <td><input type=" " name=" " value=" " readonly></td>
+                   </tr>
+                   <tr>
+                       <td>Academic Advisor:&emsp;</td>
+                       <td><input type=" " name=" " value=" " readonly></td>
+                   </tr>
+                   <tr>
+                       <td>PSM Title:&emsp;</td>
+                       <td><input type=" " name=" " value=" " readonly></td>
+                   </tr>
+
+               </table>
+          </div>
+
+          <div class = "row-12">
                 <!--Button trigger modal-->
                 <!-- Button trigger modal -->
+                <div class = "col-12">
+                <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Delete Profile
+                    </button>
+               </div>
+
+                    <!--Button trigger modal-->
+                    <!--Button trigger modal-->
+                <div class = "col-10">
                     <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Edit Profile
                     </button>
-
-                    
                 </div>
+
+
+
             </div>
-        </div>    
+
+               
+                   
+                       
+
+                   
+
+
+
+        </div>
+     </div>
+             
+           
+    </div>
+        
 
     
 
