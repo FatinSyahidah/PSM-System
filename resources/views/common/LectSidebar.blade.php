@@ -85,9 +85,8 @@
                 <div id="collapseFive" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        
-                        <a class="collapse-item" href="RequestInventory">Request Inventory</a>
-                        <a class="collapse-item" href="RequestStatus">Request Status</a>
+                        <a class="collapse-item" href="StudentRequestStatus">Student Request Status</a>
+                        <a class="collapse-item" href="PickUpItem">Pick Up Item</a>
                     </div>
                 </div>
             </li>

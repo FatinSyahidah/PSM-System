@@ -28,9 +28,6 @@
                     <h2 style="color:black">Request Status</h2>
                 </div> 
 
-        </div>    
-
-        </div>
 
     </body>
 </html>
