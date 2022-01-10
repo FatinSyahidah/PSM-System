@@ -37,7 +37,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="#">My Profile</a>
+                        <a class="collapse-item" href="ProfileViewStudent">My Profile</a>
                         
                     </div>
                 </div>

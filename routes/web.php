@@ -28,7 +28,13 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name(
 
 
 //Manage Profile
+Route::get('ProfileViewStudent', function() {
+    return view('Manage Profile/ProfileViewStudent');
+});
 
+Route::get('ProfileViewLecturer', function(){
+    return view('Manage Profile/ProfileViewLecturer');
+});
 
 //Manage SV
 
@@ -36,8 +42,27 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name(
 //Manage Logbook
 
 //Manage Proposal
+Route::get('LectMainPg', function () {
+    return view('Manage Proposal/LectMainPg');
+});
+
+Route::get('StdMainPg', function () {
+    return view('Manage Proposal/StdMainPg');
+});
+
+Route::get('/AddReq', function () {
+    return view('Manage Proposal/AddReq');
+});
+
 
 //Manage Title
 
 //Manage Inventory Usage
+Route::get('RequestInventory', function () {
+    return view('Manage Inventory Usage/RequestInventory');
+});
+
+Route::get('RequestStatus', function () {
+    return view('Manage Inventory Usage/RequestStatus');
+});
 
