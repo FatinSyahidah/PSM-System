@@ -56,6 +56,33 @@ Route::get('/AddReq', function () {
 
 
 //Manage Title
+Route::get('StatusTitle', function () {   //Student
+    return view('Manage Title/StatusTitle');
+});
+
+Route::get('BookTitle', function () {
+    return view('Manage Title/BookTitle');
+});
+
+Route::get('AddTitle', function () {      //Lecturer
+    return view('Manage Title/AddTitle');
+});
+
+Route::get('ApprovalTitle', function () {
+    return view('Manage Title/ApprovalTitle');
+});
+
+Route::get('EditTitle', function () {
+    return view('Manage Title/BookTitle');
+});
+
+Route::get('ViewTitle', function () {
+    return view('Manage Title/ViewTitle');
+});
+
+Route::get('TitleList', function () {
+    return view('Manage Title/TitleList');
+});
 
 //Manage Inventory Usage
 Route::get('RequestInventory', function () {
