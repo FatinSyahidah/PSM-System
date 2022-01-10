@@ -26,7 +26,7 @@
 
             <div class = "row">
                 <div class="col-6">
-                    <h2 style="color:black">Request Inventory</h2>
+                    <h2 style="color:black">List of Request</h2>
                 </div> 
 
                 <div class="col-6">

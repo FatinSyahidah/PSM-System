@@ -26,16 +26,46 @@
 
             <div class = "row">
                 <div class="col-6">
-                    <h2 style="color:black">Request Inventory</h2>
+                    <h2 style="color:black">View My Request</h2>
                 </div> 
 
                 <div class="col-6">
                 <!--Button trigger modal-->
                 <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    REQUEST
-                    </button>
+                    <a type="button" href="/AddReq" class="btn btn-primary float-right" 
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">Add Request</a>
                 </div>
+            </div>
+
+            <div class= "column">
+            <table class="table table-hover">
+                <thead class="table-primary">
+                <tr>
+                    <th>No</th>
+                    <th>Date</th>
+                    <th>Lecturer Name</th>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
             </div>
         </div>    
 

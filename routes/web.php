@@ -50,6 +50,11 @@ Route::get('StdMainPg', function () {
     return view('Manage Proposal/StdMainPg');
 });
 
+Route::get('/AddReq', function () {
+    return view('Manage Proposal/AddReq');
+});
+
+
 //Manage Title
 
 //Manage Inventory Usage
