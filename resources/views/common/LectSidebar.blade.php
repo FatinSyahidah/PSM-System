@@ -71,7 +71,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         
                         <a class="collapse-item" href="TitleList">List</a>
-                        <a class="collapse-item" href="ApprovallTitle
+                        <a class="collapse-item" href="ApprovalTitle
                         ">Approval</a>
                         
                     </div>
