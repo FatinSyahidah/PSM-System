@@ -1,6 +1,8 @@
 @extends('layouts.LectMaster')
 
 @section('content')
+
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -37,7 +39,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Approve</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-check fa-2x text-gray-300"></i>
@@ -56,7 +58,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                             Pending Requests</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -80,7 +82,9 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Project Title</th>
+                                            <th>Student ID</th>
                                             <th>Status</th>
+                                            <th style="text-align:right;"><th>
                                         </tr>
                                     </thead>
                                     
@@ -88,8 +92,8 @@
                                         <tr>
                                             <td>1</td>
                                             <td>System Architect</td>
-                                            <td>Pending</td>
-                                            
+                                            <td>CB19033</td>
+                                            <td class="text-success">Approved</td>
                                             <td style="text-align:right;">
                                                 <div class="comment-footer">
                                                     
@@ -117,7 +121,37 @@
                                         <tr>
                                             <td>2</td>
                                             <td>Customer Support</td>
-                                            <td>Pending</td>
+                                            <td>CB19073</td>
+                                            <td class="text-warning">Pending</td>
+                                            <td style="text-align:right;">
+                                                <div class="comment-footer">
+                                                    
+                                                    <button
+                                                    type="button"
+                                                    class="btn btn-success btn-sm text-white"
+                                                    >
+                                                    Approve
+                                                    </button>
+                                                    <button
+                                                    type="button"
+                                                    class="btn btn-danger btn-sm text-white"
+                                                    >
+                                                    Reject
+                                                    </button>
+                                                    <button
+                                                    type="button"
+                                                    class="btn btn-info btn-sm text-white"
+                                                    >
+                                                    View
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Customer Support</td>
+                                            <td>CB19083</td>
+                                            <td class="text-danger">Rejected</td>
                                             <td style="text-align:right;">
                                                 <div class="comment-footer">
                                                     

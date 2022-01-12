@@ -49,12 +49,31 @@
                                             <td style="text-align:right;">
                                                 <div class="comment-footer">
                                                     
+                                                    
+                                                    <a href="ViewTitle" class="btn btn-success btn-sm text-white">View</a>
                                                     <button
-                                                    type="button"
-                                                    class="btn btn-success btn-sm text-white"
+                                                    type="submit"
+                                                    class="btn btn-info btn-sm text-white"
                                                     >
-                                                    View
+                                                    Edit
                                                     </button>
+                                                    <button
+                                                    type="submit"
+                                                    class="btn btn-danger btn-sm text-white"
+                                                    >
+                                                    Delete
+                                                    </button>
+                                                    
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Customer Support</td>
+                                            <td style="text-align:right;">
+                                                <div class="comment-footer">
+                                                    
+                                                    <a href="ViewTitle" class="btn btn-success btn-sm text-white">View</a>
                                                     <button
                                                     type="button"
                                                     class="btn btn-info btn-sm text-white"
@@ -71,23 +90,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>2</td>
+                                            <td>3</td>
                                             <td>Customer Support</td>
                                             <td style="text-align:right;">
                                                 <div class="comment-footer">
                                                     
-                                                    <button
-                                                    type="button"
-                                                    class="btn btn-success btn-sm text-white"
-                                                    >
-                                                    View
-                                                    </button>
-                                                    <button
-                                                    type="button"
-                                                    class="btn btn-info btn-sm text-white"
-                                                    >
-                                                    Edit
-                                                    </button>
+                                                    <a href="ViewTitle" class="btn btn-success btn-sm text-white">View</a>
+                                                    <a href="EditTitle" class="btn btn-info btn-sm text-white">Edit</a>
                                                     <button
                                                     type="button"
                                                     class="btn btn-danger btn-sm text-white"
