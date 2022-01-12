@@ -69,9 +69,8 @@
                 <div id="collapseFour" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        
-                        <a class="collapse-item" href="StatusTitle">Approval</a>
                         <a class="collapse-item" href="BookTitle">Booking</a>
+                        <a class="collapse-item" href="StatusTitle">Approval</a>
                         
                     </div>
                 </div>

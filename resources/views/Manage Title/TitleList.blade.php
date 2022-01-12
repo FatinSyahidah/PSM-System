@@ -51,12 +51,7 @@
                                                     
                                                     
                                                     <a href="ViewTitle" class="btn btn-success btn-sm text-white">View</a>
-                                                    <button
-                                                    type="submit"
-                                                    class="btn btn-info btn-sm text-white"
-                                                    >
-                                                    Edit
-                                                    </button>
+                                                    <a href="EditTitle" class="btn btn-info btn-sm text-white">Edit</a>
                                                     <button
                                                     type="submit"
                                                     class="btn btn-danger btn-sm text-white"
@@ -74,12 +69,7 @@
                                                 <div class="comment-footer">
                                                     
                                                     <a href="ViewTitle" class="btn btn-success btn-sm text-white">View</a>
-                                                    <button
-                                                    type="button"
-                                                    class="btn btn-info btn-sm text-white"
-                                                    >
-                                                    Edit
-                                                    </button>
+                                                    <a href="EditTitle" class="btn btn-info btn-sm text-white">Edit</a>
                                                     <button
                                                     type="button"
                                                     class="btn btn-danger btn-sm text-white"

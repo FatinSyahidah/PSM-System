@@ -77,7 +77,7 @@ Route::get('ApprovalTitle', function () {
 });
 
 Route::get('EditTitle', function () {
-    return view('Manage Title/BookTitle');
+    return view('Manage Title/EditTitle');
 });
 
 Route::get('ViewTitle', function () {
