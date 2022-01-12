@@ -70,7 +70,9 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="#">Title</a>
+                        <a class="collapse-item" href="TitleList">List</a>
+                        <a class="collapse-item" href="ApprovallTitle
+                        ">Approval</a>
                         
                     </div>
                 </div>
