@@ -19,7 +19,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             Number of students</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -37,10 +37,10 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Approve</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        <i class="fas fa-check fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
@@ -75,37 +75,75 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            <table class="table">
-                                            <thead>
-                                                <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">First</th>
-                                                <th scope="col">Last</th>
-                                                <th scope="col">Handle</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>@mdo</td>
-                                                </tr>
-                                                <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                                </tr>
-                                                <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                                </tr>
-                                            </tbody>
-                                            </table>
+                                <table class="table" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Project Title</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>System Architect</td>
+                                            <td>Pending</td>
+                                            
+                                            <td style="text-align:right;">
+                                                <div class="comment-footer">
+                                                    
+                                                    <button
+                                                    type="button"
+                                                    class="btn btn-success btn-sm text-white"
+                                                    >
+                                                    Approve
+                                                    </button>
+                                                    <button
+                                                    type="button"
+                                                    class="btn btn-danger btn-sm text-white"
+                                                    >
+                                                    Reject
+                                                    </button>
+                                                    <button
+                                                    type="button"
+                                                    class="btn btn-info btn-sm text-white"
+                                                    >
+                                                    View
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Customer Support</td>
+                                            <td>Pending</td>
+                                            <td style="text-align:right;">
+                                                <div class="comment-footer">
+                                                    
+                                                    <button
+                                                    type="button"
+                                                    class="btn btn-success btn-sm text-white"
+                                                    >
+                                                    Approve
+                                                    </button>
+                                                    <button
+                                                    type="button"
+                                                    class="btn btn-danger btn-sm text-white"
+                                                    >
+                                                    Reject
+                                                    </button>
+                                                    <button
+                                                    type="button"
+                                                    class="btn btn-info btn-sm text-white"
+                                                    >
+                                                    View
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
