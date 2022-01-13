@@ -32,10 +32,12 @@
                 <div class="col-6">
                 <!--Button trigger modal-->
                 <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    REQUEST
-                    </button>
+                <a type="button" href="/ListNewReq" class="btn btn-primary float-right" 
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">New Request</a>
                 </div>
+            </div>
+
+            <div class = "column">
             </div>
         </div>    
 

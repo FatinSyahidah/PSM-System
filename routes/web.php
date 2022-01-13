@@ -46,16 +46,29 @@ Route::get('ProfileViewLecturer', function(){
 //Manage Logbook
 
 //Manage Proposal
+//Lecturer
 Route::get('LectMainPg', function () {
     return view('Manage Proposal/LectMainPg');
 });
+Route::get('/ListNewReq', function () {
+    return view('Manage Proposal/ListNewReq');
+});
+Route::get('/TotalReq', function () {
+    return view('Manage Proposal/TotalReq');
+});
 
+//Student
 Route::get('StdMainPg', function () {
     return view('Manage Proposal/StdMainPg');
 });
-
 Route::get('/AddReq', function () {
     return view('Manage Proposal/AddReq');
+});
+Route::get('/EditReq', function () {
+    return view('Manage Proposal/EditReq');
+});
+Route::get('/ViewStat', function () {
+    return view('Manage Proposal/ViewStat');
 });
 
 

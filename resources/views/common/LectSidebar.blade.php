@@ -119,7 +119,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="StdMainPg">View My Request</a>
+                        <a class="collapse-item" href="LectMainPg">List of Request</a>
 
                     </div>
                 </div>
