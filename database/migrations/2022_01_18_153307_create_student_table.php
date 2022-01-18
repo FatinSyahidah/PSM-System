@@ -26,11 +26,7 @@ class CreateStudentTable extends Migration
             $table->string('stud_psmTitle');
             $table->string('stud_psmPhase');
             $table->string('stud_profilePic');
-            $table->timestamps();
-
-
-            
-            
+            $table->timestamps();   
             
         });
     }
