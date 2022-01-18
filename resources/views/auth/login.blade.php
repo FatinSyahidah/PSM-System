@@ -42,15 +42,6 @@
                                                     @enderror 
                                     
                                         </div>
-                                        <div class="form-group">
-                                            <select class="form-control form-control-user
-                                                @error('password') is-invalid @enderror">
-                                                <option selected>Select User</option>
-                                                <option value="1">Student</option>
-                                                <option value="2">Lecturer</option>
-                                                <option value="3">Technician</option>
-                                            </select> 
-                                        </div>
                                         
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">

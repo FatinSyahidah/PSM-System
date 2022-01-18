@@ -55,7 +55,23 @@
                                         <div class="form-group row">
                     
                                                 <input id="password-confirm" type="password" class="form-control form-control-user" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
-                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <select class="form-control form-control-user
+                                                @error('password') is-invalid @enderror">
+                                                <option value="" hidden selected>Select User</option>
+                                                <option value="student">Student</option>
+                                                <option value="lecturer">Lecturer</option>
+                                                <option value="technician">Technician</option>
+                                            </select>
+                                                @error('level')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                     </span>
+                                                @enderror
+                                            
+                                        </div>
                                      
                                         <button class="btn btn-primary btn-user btn-block">
                                            Register
