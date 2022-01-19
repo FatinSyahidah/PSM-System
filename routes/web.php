@@ -64,6 +64,9 @@ Route::get('StdMainPg', function () {
 Route::get('/AddReq', function () {
     return view('Manage Proposal/AddReq');
 });
+Route::post('/AddReq', function () {
+    return view('Manage Proposal/AddReq');
+});
 Route::get('/EditReq', function () {
     return view('Manage Proposal/EditReq');
 });
