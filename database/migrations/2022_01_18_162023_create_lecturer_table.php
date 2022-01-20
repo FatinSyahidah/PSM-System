@@ -14,7 +14,7 @@ class CreateLecturerTable extends Migration
     public function up()
     {
         Schema::create('lecturer', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('lect_id');
             $table->string('lect_name');
             $table->string('lect_staffID');
             $table->string('lect_field');
