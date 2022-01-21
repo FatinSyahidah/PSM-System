@@ -13,7 +13,7 @@ class CreateLecturerTable extends Migration
      */
     public function up()
     {
-        Schema::create('lecturer', function (Blueprint $table) {
+        Schema::create('lecturers', function (Blueprint $table) {
             $table->increments('lect_id');
             $table->string('lect_name');
             $table->string('lect_staffID');
