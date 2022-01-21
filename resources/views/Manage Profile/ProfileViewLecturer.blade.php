@@ -26,7 +26,7 @@
 
      <div class = "row">
                 <div class="col-6">
-                    <h2 style="color:b lack">My Profile</h2>
+                    <h2 style="color:black">My Profile</h2>
                 </div>
         </div> 
         <div style ="margin-left:40px; margin-left: 2em;">
@@ -39,35 +39,35 @@
                <table>
                    <tr>
                        <td>Name:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td><?php echo $row['lect_name']?></td>
                    </tr>
                    <tr>
                        <td>Staff ID:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td><?php echo $row['lect_staffID']?></td>
                    </tr>
                    <tr>
                        <td>Field:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td><?php echo $row['lect_field']?></td>
                    </tr>
                    <tr>
                        <td>Office Number:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td><?php echo $row['lect_officeNum']?></td>
                    </tr>
                    <tr>
                        <td>Phone Number:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td><?php echo $row['lect_hpNum']?></td>
                    </tr>
                    <tr>
                        <td>Email:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td><?php echo $row['lect_email']?></td>
                    </tr>
                    <tr>
                        <td>Address:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td><?php echo $row['lect_add']?></td>
                    </tr>
                    <tr>
                        <td>Expertise:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td><?php echo $row['lect_expertise']?></td>
                    </tr>
                    
                </table>
@@ -85,7 +85,7 @@
                     <!--Button trigger modal-->
                     <!--Button trigger modal-->
                 <div class = "col-10">
-                    <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" onclick ="location.href=ProfileLecturerEdit.blade.php" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Edit Profile
                     </button>
                 </div>
