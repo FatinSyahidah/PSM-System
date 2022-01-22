@@ -1,26 +1,26 @@
 @extends('auth.layouts.app')
 
 @section('content')
-<div class="row justify-content-center">
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header"> {{ isset($url) ? ucwords($url) : ""}} {{ __('Register') }}</div>
 
+                    <div class="card-body">
+                        @isset($url)
+                        <form method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
+                        @else
+                        <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                        @endisset
+                            @csrf
 
-
-            <div class="col-xl-10 col-lg-12 col-md-9">
-
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Register</h1>
-                                    </div>
-                                    <form method="POST" action="{{ route('register') }}">
-                                        @csrf
-
-                                        <div class="form-group row">
+                            @if (Session::get('success'))
+                                            <div class="alert alert-success">
+                                                {{ Session::get('success') }}
+                                            </div>
+                                        @endif
+                            <div class="form-group row">
                                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name"> 
                                                 @error('name')
                                                     <span class="invalid-feedback" role="alert">
@@ -56,22 +56,6 @@
                     
                                                 <input id="password-confirm" type="password" class="form-control form-control-user" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
                                         </div>
-
-                                        <div class="form-group row">
-                                            <select class="form-control form-control-user
-                                                @error('password') is-invalid @enderror">
-                                                <option value="" hidden selected>Select User</option>
-                                                <option value="student">Student</option>
-                                                <option value="lecturer">Lecturer</option>
-                                                <option value="technician">Technician</option>
-                                            </select>
-                                                @error('level')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                     </span>
-                                                @enderror
-                                            
-                                        </div>
                                      
                                         <button class="btn btn-primary btn-user btn-block">
                                            Register
@@ -86,10 +70,6 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
-
-        </div>
-</div>
+    </div>
 
 @endsection

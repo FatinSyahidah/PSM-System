@@ -17,7 +17,10 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
-
+    'technician'=>[
+        'driver'=>'eloquent',
+        'model'=>App\Models\Technician::class,
+    ],
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -39,6 +42,21 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'api'=>[
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+        'technician'=>[
+            'redirectTo' => 'technician.home',
+            'driver'=>'session',
+            'provider'=>'technicians',
+        ],
+
+        'student' =>[
+            'driver' => 'session',
+            'provider'=> 'students',
         ],
     ],
 
@@ -69,6 +87,15 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        'technicians' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Technician::class,
+        ],
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\ProfileModel\student::class,
+        ],
     ],
 
     /*
@@ -93,7 +120,12 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        'technicians'=>[
+            'driver' => 'eloquent',
+            'model'=>App\Models\Technician::class,
+        ]
     ],
+
 
     /*
     |--------------------------------------------------------------------------

@@ -1,16 +1,15 @@
-@extends('layouts.master')
+@extends('layouts.LectMaster')
 
 @section('content')
 
+<!-- Page for lecturer to key in the pick up item details when the request status is APPROVE -->
 <!DOCTYPE html>
 <html>
     <head>
          <!-- Custom fonts for this template -->
-         <link rel="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
-         <link rel="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
-         <link rel="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css">
+        
          <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.min.css"/>
-         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
          
          <style>
             .float-right{
@@ -23,10 +22,25 @@
     <body> 
         <div class = "container">
 
+            @if(session('success'))
+                <div class="alert alert-primary" role="alert">
+                {{session('success')}}
+                </div>
+            @endif
+            
             <div class = "row">
+                <!-- page title -->
                 <div class="col-6">
                     <h2 style="color:black">Pick Up Item</h2>
                 </div> 
+
+                <div class="container-fluid">
+                <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">ADD PICK UP ITEM DETAILS</h6>
+                        </div>
+                        
+        </div>
 
     </body>
 </html>
