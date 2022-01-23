@@ -39,23 +39,7 @@
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">ADD PICK UP ITEM DETAILS</h6>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <!-- table to show the students' inventory request which is request status is set to APPROVE -->
-                                <table id="example" class="table nowrap" style="color:black">
-                                    <thead>
-                                        <tr>
-                                            <th>Inventory ID</th>
-                                            <th>Student Matric ID</th>
-                                            <th>Student Name</th>
-                                            <th>Inventory Name</th>
-                                            <th>Quantity</th>
-                                            <th>Status</th>
-                                            <th>Operation</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       
+                       
         </div>
 
     </body>
