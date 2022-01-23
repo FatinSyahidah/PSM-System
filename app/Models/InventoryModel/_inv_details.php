@@ -16,6 +16,7 @@ class _inv_details extends Model
         'inv_name',
         'quantity',
         'pick_date',
-        'ret_date'
+        'ret_date',
+        'remark'
     ];
 }

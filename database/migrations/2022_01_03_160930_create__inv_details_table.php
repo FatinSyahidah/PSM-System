@@ -17,6 +17,7 @@ class CreateInvDetailsTable extends Migration
             $table->integer('quantity');
             $table->date('pick_date');
             $table->date('ret_date');
+            $table->string('remark')->nullable();
             $table->timestamps();
         });
     }
