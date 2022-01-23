@@ -100,6 +100,12 @@ Route::get('ProfileViewStudent', 'App\Http\Controllers\StudentController@viewstu
   
 Route::get('ProfileViewLecturer', function(){
     return view('Manage Profile/ProfileViewLecturer');
+
+}); 
+
+Route::get('ProfileViewStudent', function(){
+    $students = \App\Models\ProfileModel\student::all();
+    return view('Manage Profile/ProfileViewStudent',compact('students'));
 });
 
 //Manage SV

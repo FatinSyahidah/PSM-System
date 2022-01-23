@@ -40,39 +40,39 @@
                <table>
                    <tr>
                        <td>Name:&emsp;</td>
-                       <td>{{$student['name']}}</td>
+                       <td>{{$student->name}}</td>
                    </tr>
                    <tr>
                        <td>Matric ID:&emsp;</td>
-                       <td>{{$student['name']}}</td>
+                       <td>{{$student->stud_matricID}}</td>
                    </tr>
                    <tr>
                        <td>Course:&emsp;</td>
-                       <td>{{$student['name']}}</td>
+                       <td>{{$student->stud_course}}</td>
                    </tr>
                    <tr>
                        <td>Year of Study:&emsp;</td>
-                       <td>{{$student['name']}}</td>
+                       <td>{{$student->stud_year}}</td>
                    </tr>
                    <tr>
                        <td>Phone Number:&emsp;</td>
-                       <td>{{$students['name']}}</td>
+                       <td>{{$students->stud_hpNum}}</td>
                    </tr>
                    <tr>
                        <td>Email:&emsp;</td>
-                       <td>{{$student['name']}}</td>
+                       <td>{{$student->email}}</td>
                    </tr>
                    <tr>
                        <td>Address:&emsp;</td>
-                       <td>{{$studen['name']}}</td>
+                       <td>{{$studen->stud_add}}</td>
                    </tr>
                    <tr>
                        <td>Academic Advisor:&emsp;</td>
-                       <td>{{$student['name']}}</td>
+                       <td>{{$student->stud_advisor}}</td>
                    </tr>
                    <tr>
                        <td>PSM Title:&emsp;</td>
-                       <td>{{$student['name']}}</td>
+                       <td>{{$student->stud_psmTitle}}</td>
                    </tr>
 
                </table>
