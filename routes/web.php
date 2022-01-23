@@ -59,8 +59,11 @@ Route::get('/TotalReq', function () {
 });
 
 //Student
+Route::get('StdMainPg', function () {
+    return view('Manage Proposal/StdMainPg');
+});
 Route::view('form', 'Manage Proposal/newReq');
-Route::post('submit', 'ProposalsController@save');
+Route::post('submit', 'ProposalController@save');
 
 //Manage Title
 Route::get('StatusTitle', function () {   //Student

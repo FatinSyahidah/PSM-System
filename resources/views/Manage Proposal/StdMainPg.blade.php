@@ -32,7 +32,7 @@
                 <div class="col-6">
                 <!--Button trigger modal-->
                 <!-- Button trigger modal -->
-                    <a type="button" href="/AddReq" class="btn btn-primary float-right" 
+                    <a type="button" href="/form" class="btn btn-primary float-right" 
                     data-bs-toggle="modal" data-bs-target="#exampleModal">Add Request</a>
                 </div>
             </div>
@@ -49,15 +49,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($proposal as $key -> $value)
-                <tr>
-                    <td>{{$request->proposal_ID}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                @endforeach
                 </tbody>
             </table>
             </div>
