@@ -21,13 +21,13 @@
     </head>
 
     <body> 
-      <div class = "container">
+      <div class = "card">
 
 
-     <div class = "row">
-                <div class="col-6">
+     <div class = "card-header">
+                
                     <h2 style="color:b lack">My Profile</h2>
-                </div>
+                
         </div> 
         <div style ="margin-left:40px; margin-left: 2em;">
             <img src="prof pic.jpg"  style="height:106px;width:106px"
@@ -35,47 +35,51 @@
             </div>
 
         
-           <div style ="margin-left: 50px; margin-left: 12em;">
+           <div class="card-body">
+           @foreach($students as $student)
                <table>
                    <tr>
                        <td>Name:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td>{{$student['name']}}</td>
                    </tr>
                    <tr>
                        <td>Matric ID:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td>{{$student['name']}}</td>
                    </tr>
                    <tr>
                        <td>Course:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td>{{$student['name']}}</td>
                    </tr>
                    <tr>
                        <td>Year of Study:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td>{{$student['name']}}</td>
                    </tr>
                    <tr>
                        <td>Phone Number:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td>{{$students['name']}}</td>
                    </tr>
                    <tr>
                        <td>Email:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td>{{$student['name']}}</td>
                    </tr>
                    <tr>
                        <td>Address:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td>{{$studen['name']}}</td>
                    </tr>
                    <tr>
                        <td>Academic Advisor:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td>{{$student['name']}}</td>
                    </tr>
                    <tr>
                        <td>PSM Title:&emsp;</td>
-                       <td><input type=" " name=" " value=" " readonly></td>
+                       <td>{{$student['name']}}</td>
                    </tr>
 
                </table>
+               <br>
+               <br>
           </div>
+          
 
           <div class = "row-12">
                 <!--Button trigger modal-->
@@ -94,7 +98,7 @@
                     </button>
                 </div>
 
-
+              @endforeach
 
             </div>
 
@@ -119,3 +123,4 @@
 </html>
 
 @endsection
+
