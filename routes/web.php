@@ -59,24 +59,8 @@ Route::get('/TotalReq', function () {
 });
 
 //Student
-Route::get('StdMainPg', function () {
-    return view('Manage Proposal/StdMainPg');
-});
-Route::get('/AddReq', function () {
-    return view('Manage Proposal/AddReq');
-});
-Route::post('/AddReq', function () {
-    return view('Manage Proposal/AddReq');
-});
-Route::get('/EditReq', function () {
-    return view('Manage Proposal/EditReq');
-});
-Route::get('/ViewStat', function () {
-    return view('Manage Proposal/ViewStat');
-});
-Route::get('AddReq', [ProposalController::class, 'newreq']);
-Route::get('list', [ProposalController::class,'show']); 
-
+Route::view('form', 'Manage Proposal/newReq');
+Route::post('submit', 'ProposalsController@save');
 
 //Manage Title
 Route::get('StatusTitle', function () {   //Student
