@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\ProposalController;
 
 /*
@@ -15,19 +16,56 @@ use App\Http\Controllers\ProposalController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('auth/login');
+});*/
+
+Route::get('/', function () {
+    return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/login/technician', 'Auth\LoginController@showTechnicianLoginForm');
+Route::get('/login/technician', [LoginController::class,'showTechnicianLoginForm']);
+//Route::get('/login/student', 'Auth\LoginController@showStudentLoginForm');
+Route::get('/login/student', [LoginController::class,'showStudentLoginForm']);
+Route::get('/login/lecturer', [LoginController::class,'showLecturerLoginForm']);
+//Route::get('/register/technician', 'Auth\RegisterController@showTechnicianRegisterForm');
+Route::get('/register/technician', [RegisterController::class,'showTechnicianRegisterForm']);
+//Route::get('/register/student', 'Auth\RegisterController@showStudentRegisterForm');
+Route::get('/register/student', [RegisterController::class,'showStudentRegisterForm']);
+Route::get('/register/lecturer', [RegisterController::class,'showLecturerRegisterForm']);
 
-Route::get('LectHome', [App\Http\Controllers\HomeController::class, 'index2'])->name('LectHome');
+//Route::post('/login/technician', 'Auth\LoginController@technicianLogin');
+Route::post('/login/technician', [LoginController::class,'technicianLogin']);
+//Route::post('/login/student', 'Auth\LoginController@studentLogin');
+Route::post('/login/student', [LoginController::class,'studentLogin']);
+Route::post('/login/lecturer', [LoginController::class,'lecturerLogin']);
+//Route::post('/register/technician', '\Auth\RegisterController@createTechnician')->name('register');
+Route::post('/register/technician', [RegisterController::class,'createTechnician']);
+//Route::post('/register/student', 'Auth\RegisterController@createStudent');
+Route::post('/register/student', [RegisterController::class,'createStudent']);
+Route::post('/register/lecturer', [RegisterController::class,'createLecturer']);
 
-Route::get('TechHome', [App\Http\Controllers\HomeController::class, 'index3'])->name('TechHome');
+Route::view('/home', 'home')->middleware('auth');
+Route::view('/technician', 'technician');
+Route::view('/student', 'student');
+Route::view('/lecturer', 'lecturer');
+
+
+
+
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route::get('LectHome', [App\Http\Controllers\HomeController::class, 'index2'])->name('LectHome');
+
+//Route::get('TechHome', [App\Http\Controllers\HomeController::class, 'index3'])->name('TechHome');
 
 //Manage Meeting
 
@@ -37,8 +75,14 @@ Route::get('ProfileViewStudent', function() {
     return view('Manage Profile/ProfileViewStudent');
 });
 
+
+Route::get('ProfileViewStudent', 'App\Http\Controllers\StudentController@viewstudent');
 Route::get('ProfileViewLecturer', function(){
     return view('Manage Profile/ProfileViewLecturer');
+}); 
+Route::get('ProfileViewStudent', function(){
+    $students = \App\Models\ProfileModel\student::all();
+    return view('Manage Profile/ProfileViewStudent',compact('students'));
 });
 
 //Manage SV
@@ -103,3 +147,4 @@ Route::get('RequestStatus', function () {
     return view('Manage Inventory Usage/RequestStatus');
 });
 
+Route::post('create','App\Http\Controllers\InventoryController@create');

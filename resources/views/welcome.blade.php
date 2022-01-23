@@ -23,9 +23,7 @@
     <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                
-                                <img class="img-profile rounded-circle"
-                                    src="{{asset('admin/img/undraw_profile.svg')}}">
+                            
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -34,11 +32,11 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Student
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="/login/lecturer">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Lecturer
                                 </a>
-                                <a class="dropdown-item" href="/login/student">
+                                <a class="dropdown-item" href="/login/technician">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Technician
                                 </a>

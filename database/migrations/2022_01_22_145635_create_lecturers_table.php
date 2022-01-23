@@ -16,14 +16,14 @@ class CreateLecturersTable extends Migration
         Schema::create('lecturers', function (Blueprint $table) {
             $table->increments('lect_id');
             $table->string('name');
-            $table->string('lect_staffID');
-            $table->string('lect_field');
-            $table->string('lect_officeNum');
-            $table->string('lect_hpNum');
+            $table->string('lect_staffID')->nullable();
+            $table->string('lect_field')->nullable();
+            $table->string('lect_officeNum')->nullable();
+            $table->string('lect_hpNum')->nullable();
             $table->string('email');
-            $table->string('lect_add');
-            $table->string('lect_expertise');
-            $table->string('lect_profilePic');
+            $table->string('lect_add')->nullable();
+            $table->string('lect_expertise')->nullable();
+            $table->string('lect_profilePic')->nullable();
             $table->string('password');
             $table->boolean('is_teacher')->default(false);
             $table->rememberToken();

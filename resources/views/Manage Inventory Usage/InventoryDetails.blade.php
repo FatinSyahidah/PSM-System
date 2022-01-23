@@ -33,6 +33,8 @@
                     <h2 style="color:black">Inventory Details</h2>
                 </div> 
 
+                
+               
     </body>
 </html>
 

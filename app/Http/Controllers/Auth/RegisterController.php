@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\ProfileModel\Lecturer;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Models\Technician;
@@ -44,6 +45,7 @@ class RegisterController extends Controller
         $this->middleware('guest');
         $this->middleware('guest:technician');
         $this->middleware('guest:student');
+        $this->middleware('guest:lecturer');
     }
 
     /**
@@ -84,6 +86,10 @@ class RegisterController extends Controller
         return view('auth.register', ['url' => 'student']);
     }
 
+    public function showLecturerRegisterForm(){
+        return view('auth.register', ['url' => 'lecturer']);
+    }
+
     protected function createTechnician(Request $request)
     {
         $this->validator($request->all())->validate();
@@ -104,5 +110,16 @@ class RegisterController extends Controller
             'password' => Hash::make($request['password']),
         ]);
         return redirect()->intended('login/student');
+    }
+
+    protected function createLecturer(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $lect = Lecturer::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect()->intended('login/lecturer');
     }
 }

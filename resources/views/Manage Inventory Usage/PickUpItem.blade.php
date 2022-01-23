@@ -39,7 +39,7 @@
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">ADD PICK UP ITEM DETAILS</h6>
                         </div>
-                        
+                       
         </div>
 
     </body>
