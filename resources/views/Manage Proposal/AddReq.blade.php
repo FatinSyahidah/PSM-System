@@ -32,6 +32,27 @@
                 </div> 
             </div>
             
+            <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Matric ID/th>
+                    <th>Advisor</th>
+                </tr>
+            </thead>
+            <tbody>
+                eforeach($data as Srow)
+                <tr>
+                    <td><{{ $row->stud_name }}/td>
+                    <td>{{ $row->stud_matricID }}</td>
+                    <td>{{ $row->stud_advisor }}</td>
+                </tr>
+                Bendforeach
+            </tbody>
+            </table>
+            
+            
+            
             <form action="{{ url('AddReq') }}" method="POST" enctype="multiple/form-data">
                 @csrf
                 <div class="form-group mb-">

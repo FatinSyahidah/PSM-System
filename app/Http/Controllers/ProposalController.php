@@ -7,24 +7,10 @@ use App\Models\Proposal;
 
 class ProposalController extends Controller
 {
-    public function newreq()
+   /*public function newreq()
     {
-        $proposal = proposal::all()->toArray();
-        return view('Manage Proposal.AddReq');
-    }
-    public function storereq(Request $request)
-    {
-        $proposal = new Proposal;
-        if($request->hasfile('stud_proposal'))
-        {
-            $file = $request->file('stud_proposal');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('upload/Proposal/', $filename);
-            $proposal->stud_proposal = $filename;
-        }
-        $proposal->save();
-        return redirect()->back()->with('status', 'File Successfully Upload');
+        
+        return view('AddReq', compact('data'));
     }
     public function viewstatus()
     {
@@ -42,5 +28,11 @@ class ProposalController extends Controller
     public function listreq()
     {
         return view('Manage Proposal.ListNewReq');
+    }*/
+
+    function listreq()
+    {
+        $proposal = psm::proposals('proposal')->get();
+        return view('Manage Proposal.StdMainPg', ['proposal' => $proposal]);
     }
 }

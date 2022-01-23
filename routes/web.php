@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProposalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +74,8 @@ Route::get('/EditReq', function () {
 Route::get('/ViewStat', function () {
     return view('Manage Proposal/ViewStat');
 });
+Route::get('AddReq', [ProposalController::class, 'newreq']);
+Route::get('list', [ProposalController::class,'show']); 
 
 
 //Manage Title

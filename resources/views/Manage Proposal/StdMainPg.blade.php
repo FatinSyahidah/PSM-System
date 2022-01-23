@@ -49,27 +49,15 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($proposal as $key -> $value)
                 <tr>
-                    <td>1.</td>
+                    <td>{{$request->proposal_ID}}</td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td>2.</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                @endforeach
                 </tbody>
             </table>
             </div>
