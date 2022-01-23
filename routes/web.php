@@ -42,7 +42,9 @@ Route::get('ProfileViewLecturer', function(){
 });
 
 //Manage SV
-
+Route::get('SVbooking', function() {
+    return view('Manage Supervisor Hunting/SVbooking');
+});
 
 //Manage Logbook
 
