@@ -12,6 +12,7 @@ use \Illuminate\Http\Response;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
+use App\Http\Controllers\Controller;
 
 class ProposalsController extends Controller
 {
@@ -30,5 +31,11 @@ class ProposalsController extends Controller
         $proposals = Proposals::with('student')->get();
 
         return view('Manage Proposal.newReq', compact('student, proposals'));
+    }
+
+    public function viewstudent()
+    {
+        $students = DB::table('students')->select('stud_id','name')->get();
+        return view('Manage Proposal.StdMainPg')->with('students',$student);
     }
 }

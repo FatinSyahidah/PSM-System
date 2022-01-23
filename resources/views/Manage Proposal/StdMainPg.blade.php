@@ -37,6 +37,24 @@
                 </div>
             </div>
 
+            <div class="card-body">
+            @foreach($student as $student)
+               <table>
+                   <tr>
+                       <td>Name:&emsp;</td>
+                       <td>{{$student['name']}}</td>
+                   </tr>
+                   <tr>
+                       <td>Matric ID:&emsp;</td>
+                       <td>{{$student['name']}}</td>
+                   </tr>
+                   </table>
+               <br>
+               <br>
+            </div>
+            @endforeach
+
+            
             @yield('content')
             <br><br>
             <div class= "column">
@@ -51,6 +69,16 @@
                 </tr>
                 </thead>
                 <tbody>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Delete</button>
+                        <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Edit</button>
+                    </td>
                 </tbody>
             </table>
             </div>

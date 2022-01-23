@@ -60,7 +60,8 @@ Route::get('/TotalReq', function () {
 
 //Student
 Route::get('StdMainPg', function () {
-    return view('Manage Proposal/StdMainPg');
+    $student = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/StdMainPg', compact('student'));
 });
 Route::view('form', 'Manage Proposal/newReq');
 Route::post('submit', 'ProposalController@save');
