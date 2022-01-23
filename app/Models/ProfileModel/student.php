@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\ProposalModel\proposals;
+
 
 class student extends  Authenticatable
 {
@@ -32,4 +34,9 @@ class student extends  Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function proposals()
+    {
+        return $this->hasMany(proposals::class, 'name', 'stud_matricID', 'stud_advisor', 'stud_id');
+    }
 }

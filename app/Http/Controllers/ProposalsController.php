@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProposalModel\proposals;
+use App\Models\ProfileModel\student;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use \Illuminate\Http\Response;
@@ -22,5 +23,12 @@ class ProposalsController extends Controller
         $proposals->name = $req->name;
         $proposals->name = $req->name;
         echo $proposals->save();
+    }
+    public function newReq()
+    {
+        $student = Student::with('proposals')->get();
+        $proposals = Proposals::with('student')->get();
+
+        return view('Manage Proposal.newReq', compact('student, proposals'));
     }
 }

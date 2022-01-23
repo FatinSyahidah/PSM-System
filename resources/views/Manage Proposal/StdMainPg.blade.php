@@ -37,6 +37,8 @@
                 </div>
             </div>
 
+            @yield('content')
+            <br><br>
             <div class= "column">
             <table class="table table-hover">
                 <thead class="table-primary">

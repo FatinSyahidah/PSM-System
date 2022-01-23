@@ -79,14 +79,18 @@ Route::get('ProfileViewStudent', function() {
 Route::get('ProfileViewStudent', 'App\Http\Controllers\StudentController@viewstudent');
 Route::get('ProfileViewLecturer', function(){
     return view('Manage Profile/ProfileViewLecturer');
+
 }); 
+
 Route::get('ProfileViewStudent', function(){
     $students = \App\Models\ProfileModel\student::all();
     return view('Manage Profile/ProfileViewStudent',compact('students'));
 });
 
 //Manage SV
-
+Route::get('SVbooking', function() {
+    return view('Manage Supervisor Hunting/SVbooking');
+});
 
 //Manage Logbook
 

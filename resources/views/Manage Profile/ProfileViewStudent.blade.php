@@ -56,7 +56,7 @@
                    </tr>
                    <tr>
                        <td>Phone Number:&emsp;</td>
-                       <td>{{$student->stud_hpNum}}</td>
+                       <td>{{$students->stud_hpNum}}</td>
                    </tr>
                    <tr>
                        <td>Email:&emsp;</td>
@@ -64,7 +64,7 @@
                    </tr>
                    <tr>
                        <td>Address:&emsp;</td>
-                       <td>{{$student->stud_add}}</td>
+                       <td>{{$studen->stud_add}}</td>
                    </tr>
                    <tr>
                        <td>Academic Advisor:&emsp;</td>
@@ -72,7 +72,7 @@
                    </tr>
                    <tr>
                        <td>PSM Title:&emsp;</td>
-                       <td>{{$student->psmTitle}}</td>
+                       <td>{{$student->stud_psmTitle}}</td>
                    </tr>
 
                </table>
