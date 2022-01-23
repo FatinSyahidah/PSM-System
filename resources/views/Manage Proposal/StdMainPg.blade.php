@@ -32,11 +32,13 @@
                 <div class="col-6">
                 <!--Button trigger modal-->
                 <!-- Button trigger modal -->
-                    <a type="button" href="/AddReq" class="btn btn-primary float-right" 
+                    <a type="button" href="/form" class="btn btn-primary float-right" 
                     data-bs-toggle="modal" data-bs-target="#exampleModal">Add Request</a>
                 </div>
             </div>
 
+            @yield('content')
+            <br><br>
             <div class= "column">
             <table class="table table-hover">
                 <thead class="table-primary">
@@ -49,27 +51,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
                 </tbody>
             </table>
             </div>

@@ -32,9 +32,27 @@
                 </div> 
             </div>
             
-            <form action="{{ url('AddReq') }}" method="POST" enctype="multiple/form-data">
-                @csrf
-                <div class="form-group mb-">
+            <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Matric ID</th>
+                    <th>Advisor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                </tr>
+            </tbody>
+            </table>
+            
+            <form action="submit" method="POST">
+            @csrf
+            <input type="text" name="name" placeholder="company name">
+            <br><br>
+            <input type="text" name="address" placeholder="company address">
+            <br><br>
+            <div class="form-group mb-">
                     <label for="">Student Name</label>
                     <input type="text" name="" class="form-control">
                 </div>
@@ -51,6 +69,14 @@
                 <div class="form-group mb-3">
                     <button type="submit" class="btn btn-primary">SUBMIT</button>
                 </div>
+            </form>
+
+
+
+            
+            <form action="{{ url('AddReq') }}" method="POST" enctype="multiple/form-data">
+                @csrf
+                
             </form>
 
     
