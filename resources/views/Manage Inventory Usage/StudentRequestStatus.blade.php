@@ -25,6 +25,27 @@
                     <h2 style="color:black">Student Request Status</h2>
                 </div> 
 
+                <!-- Table to show the inventory request status -->
+                <div class="container-fluid">
+                <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Student Request Status List</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                            <!-- table to display all the inventory request made by student -->
+                            <table id="example" class="table nowrap" style="color:black; width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th>Inventory ID</th>
+                                        <th>Student Matric ID</th>
+                                        <th>Inventory Name</th>
+                                        <th>Quantity</th>
+                                        <th>Status</th>
+                                        <th>Operation</th>
+                                    </tr>
+                                </thead>
+                                
         
         </div>
     </body>

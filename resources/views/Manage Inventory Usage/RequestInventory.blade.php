@@ -154,8 +154,87 @@
             </div>
         <div class="modal-body">
 
-      
+            <!-- form action after click submit button -->
+            <form action="create" method="POST">
+            {{csrf_field()}}
+            
+            <div class="modal-body" style="height:68vh;overflow-y: auto;">
+            <div class="form-group row">
+                    <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Matric ID</label>
+                    <div class="col-sm-9">
+                        <input name="stud_matricID" type="text"  class="form-control" id="exampleFormControlInput1" placeholder="Insert Student ID" required>
+                    </div>
+            </div>
+
+                <div class="form-group row">
+                    <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Name</label>
+                    <div class="col-sm-9">
+                        <input name="stud_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insert Student Name" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Inventory</label>
+                    <div class="col-sm-9">
+                        <select name="inv_name" class="form-control" aria-label="Inventory" required>
+                            <option selected>Choose</option>
+                            <option value="Arduino Kit">Arduino Kit</option>
+                            <option value="Cable">Cable</option>
+                            <option value="Camera Digital">Camera Digital</option>
+                            <option value="Desktop">Desktop/PC</option>
+                            <option value="External Drive">External Hard Drives</option>
+                            <option value="Hub">Hub</option>
+                            <option value="Keyboard">Keyboard</option>
+                            <option value="Projector">Projector</option>
+                            <option value="Router">Router</option>
+                            <option value="Scanner">Scanner</option>
+                            <option value="Smart Board">Smart Board</option>
+                            <option value="Smart Card Reader">Smart Card Reader</option>
+                            <option value="Switch">Switch</option>
+                            <option value="Projector">Projector</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Quantity</label>
+                    <div class="col-sm-9">
+                        <select name="quantity" class="form-control" aria-label="Quantity" required>
+                            <option selected>Choose</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Request Date</label>
+                    <div class="col-sm-9">
+                        <input name="date" type="date" id="datepicker" class="form-control" rows="3" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Status</label>
+                    <div class="col-sm-9">
+                        <input name="req_status" class="form-control" id="exampleFormControlTextarea1" rows="3" value="REQUEST" readonly>
+
+                    </div>
+                </div>
+            
+            </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
+            </form>
         </div>
+        </div>
+        </div>
+        </div>
+     
     </body>
 </html>
 

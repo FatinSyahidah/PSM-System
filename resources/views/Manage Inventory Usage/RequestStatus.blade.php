@@ -33,7 +33,42 @@
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Request Status List</h6>
                         </div>
-                       
+                        <div class="card-body">
+                            <div class="table-responsive">
+                
+                                <table id="example" class="table  nowrap" style="color: black; width: 100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Inventory ID</th>
+                                            <th>Student Matric ID</th>
+                                            <th>Student Name</th>
+                                            <th>Inventory Name</th>
+                                            <th>Quantity</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($data as $student)
+                                            <tr>
+                                                <td>{{$student->inv_ID}}</td>
+                                                <td>{{$student->stud_matricID}}</td>
+                                                <td>{{$student->stud_name}}</td>
+                                                <td>{{$student->inv_name}}</td>
+                                                <td>{{$student->quantity}}</td>
+                                                <td class="text-success">{{$student->req_status}}</td>
+                                                
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+        
         </div>
     </body>
 </html>
