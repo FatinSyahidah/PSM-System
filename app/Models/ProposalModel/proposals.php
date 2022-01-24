@@ -10,8 +10,9 @@ use App\Models\ProfileModel\student;
 class proposals extends Model
 {
     use HasFactory;
-    protected $table = 'proposals';
-    public $timestamps = false;
+    protected $guard = 'proposal';
+    protected $primaryKey = 'proposal_ID';
+    //public $timestamps = false;
 
     protected $fillable = [
         'proposal_ID',
@@ -22,8 +23,8 @@ class proposals extends Model
         'total_Req',
     ];
 
-    public function student()
+    /*public function student()
     {
         return $this->belongsTo(student::class);
-    }
+    }*/
 }

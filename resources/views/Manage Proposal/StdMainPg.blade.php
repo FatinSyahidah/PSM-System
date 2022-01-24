@@ -38,25 +38,11 @@
             </div>
 
             <div class="card-body">
-            @foreach($student as $student)
-               <table>
-                   <tr>
-                       <td>Name:&emsp;</td>
-                       <td>{{$student['name']}}</td>
-                   </tr>
-                   <tr>
-                       <td>Matric ID:&emsp;</td>
-                       <td>{{$student['name']}}</td>
-                   </tr>
-                   </table>
-               <br>
-               <br>
-            </div>
-            @endforeach
+            
 
             
             @yield('content')
-            <br><br>
+            <br>
             <div class= "column">
             <table class="table table-hover">
                 <thead class="table-primary">
@@ -65,21 +51,24 @@
                     <th>Date</th>
                     <th>Lecturer Name</th>
                     <th>Title</th>
-                    <th>Actions</th>
+                    <th colspan="2">Actions</th>
                 </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
+            @foreach($proposal as $proposal)
+                <tr>
+                    <td>{{$proposal->name}}</td>
+                    <td>{{$proposal->date_submit}}</td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Delete</button>
-                        <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Edit</button>
-                    </td>
-                </tbody>
+                    <td><a type="button" href="/EditReq" class="btn btn-primary float-center" 
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</a></td>
+                    <td><a type="button" href="/form" class="btn btn-primary float-center" 
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</a></td>
+                </tr>
+            @endforeach
+            </tbody>
+                    
             </table>
             </div>
         </div>    

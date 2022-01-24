@@ -24,22 +24,17 @@
         <div class = "container">
             
             <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Student Name</th>
-                        <th scope="col">Student Matric ID</th>
-                        <th scope="col">Student Advisor</th>
-                    </tr> 
-                </thead>
                 <tbody>
-                    @foreach ($student-> $student)
-                    <tr>
-                        <td>{{ $loop->stud_name}}</td>
-                        <td>{{ $loop->stud_matricID}}</td>
-                        <td>{{ $loop->stud_advisor}}</td>
-                    </tr>
-                    @endforeach
+                @foreach($proposals as $proposals)
+                   <tr>
+                       <td>Name:&emsp;</td>
+                       <td>{{$proposals->name}}</td>
+                   </tr>
+                   <tr>
+                       <td>Matric ID:&emsp;</td>
+                       <td>{{$proposals->stud_matricID}}</td>
+                   </tr>
+                @endforeach
                 </tbody>
             </table>
 

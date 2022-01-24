@@ -38,4 +38,9 @@ class ProposalsController extends Controller
         $students = DB::table('students')->select('stud_id','name')->get();
         return view('Manage Proposal.StdMainPg')->with('students',$student);
     }
+    public function viewstudentform()
+    {
+        $students = DB::table('proposals')->select('stud_id','name')->get();
+        return view('Manage Proposal.newReq')->with('proposals',$proposals);
+    }
 }
