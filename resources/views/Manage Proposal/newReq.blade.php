@@ -24,16 +24,18 @@
         <div class = "container">
             
             <table class="table">
+            @foreach($proposal as $proposal)
+                <thead>
+                    <tr>Student Name</tr>
+                    <tr>{{$proposal->stud_name}}</tr>
+                </thead>
                 <tbody>
-                @foreach($proposals as $proposals)
-                   <tr>
-                       <td>Name:&emsp;</td>
-                       <td>{{$proposals->name}}</td>
-                   </tr>
-                   <tr>
-                       <td>Matric ID:&emsp;</td>
-                       <td>{{$proposals->stud_matricID}}</td>
-                   </tr>
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{{$proposal->date_submit}}</td>
+                </tr>
                 @endforeach
                 </tbody>
             </table>
