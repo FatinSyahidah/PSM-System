@@ -73,16 +73,9 @@ Route::view('/lecturer', 'lecturer');
 
 
 //Manage Profile
-Route::get('ProfileViewStudent', function() {
-    return view('Manage Profile/ProfileViewStudent');
-});
-
-
 Route::get('ProfileViewStudent', 'App\Http\Controllers\StudentController@viewstudent');
-Route::get('ProfileViewLecturer', function(){
-    return view('Manage Profile/ProfileViewLecturer');
 
-}); 
+Route::get('ProfileViewStudent', 'App\Http\Controllers\StudentController@deletestud');
 
 Route::get('ProfileViewStudent', function(){
     $students = \App\Models\ProfileModel\student::all();

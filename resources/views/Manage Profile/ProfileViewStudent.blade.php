@@ -26,15 +26,12 @@
 
      <div class = "card-header">
                 
-                    <h2 style="color:b lack">My Profile</h2>
+                    <h2 style="color:black">My Profile</h2>
                 
         </div> 
-        <div style ="margin-left:40px; margin-left: 2em;">
-            <img src="prof pic.jpg"  style="height:106px;width:106px"
-                alt="Avatar" title="Profile picture to show customised image">
-            </div>
-
         
+
+           
            <div class="card-body">
            @foreach($students as $student)
                <table>
@@ -85,7 +82,12 @@
                 <!--Button trigger modal-->
                 <!-- Button trigger modal -->
                 <div class = "col-12">
-                <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button a href="students/{{$student->stud_id}}/deletestud" type="button" class="btn btn-primary float-right" onclick="var result = confirm('Delete Profile?');
+                       if (result){
+                           event.preventDefault();
+
+                           document.getElementById('delete-form-{{$student->stud_id}}').submit();}"
+                         data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Delete Profile
                     </button>
                </div>
@@ -93,7 +95,7 @@
                     <!--Button trigger modal-->
                     <!--Button trigger modal-->
                 <div class = "col-10">
-                    <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button a href= "Manage Profile/ProfileStudentEdit{{$student->stud_id}}/edit" type="button"  class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Edit Profile
                     </button>
                 </div>

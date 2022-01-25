@@ -19,5 +19,12 @@ class StudentController extends Controller
         $students = DB::table('students')->select('stud_id','name')->get();
         return view('Manage Profile.ProfileViewStudent')->with('students',$students);
     }
+
+    public function deletestud($stud_id)
+    {
+        $students = \App\Models\ProfileModel\students::find($stud_id);
+        $students->delete($students);
+        return redirect ('ProfileViewStudent');
+    }
         
 }

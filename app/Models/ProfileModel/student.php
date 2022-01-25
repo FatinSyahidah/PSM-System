@@ -27,8 +27,8 @@ class student extends  Authenticatable
         'stud_add',
         'stud_advisor',
         'stud_psmTitle',
-        'stud_psmPhase',
-        'stud_profilePic'
+        'stud_psmPhase'
+        
     ];
 
     protected $hidden = [
