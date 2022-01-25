@@ -9,18 +9,12 @@
          <!-- Custom fonts for this template -->
          
          <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.min.css"/>
-         
-         <style>
-            .float-right{
-                margin-left: -60px;
-            }
-         </style>
 
     </head>
 
     <body> 
         <div class = "container">
-
+            <!--return alert message if data successfully updated -->
             @if(session('success'))
                 <div class="alert alert-primary" role="alert">
                 {{session('success')}}
@@ -57,6 +51,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <!--Fetch data from database -->
                                         @foreach($data as $student)
                                             <tr>
                                                 <td>{{$student->inv_ID}}</td>
@@ -67,6 +62,7 @@
                                                 <td>{{$student->pick_date}}</td>
                                                 <td>{{$student->ret_date}}</td>
                                                 <td> 
+                                                    <!--Button to update detail -> do update in controller -->
                                                     <a href="{{$student->inv_ID}}/updateDetail" class="btn btn-success btn-sm text-white edit" data-bs-toggle="modal" data-bs-target="#editModal"><span class="icon text-white-50">
                                                     <i class="fas fa-edit text-white-50"></i>
                                                         </span>EDIT</a>
@@ -84,7 +80,7 @@
 
         {{--Start edit modal--}}
 
-        <!-- Modal to show the the details and to update the return date -->
+        <!-- Modal to show the the details and to update the return date and add remark -->
         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" style="color: black; z-index: 1050; display: none;" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

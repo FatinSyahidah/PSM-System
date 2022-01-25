@@ -12,6 +12,7 @@ use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
+
 class StudentController extends Controller 
 {
     public function viewstudent()
@@ -22,7 +23,7 @@ class StudentController extends Controller
 
     public function deletestud($stud_id)
     {
-        $students = \App\Models\ProfileModel\students::destroy($stud_id);
+        $students = \App\Models\ProfileModel\student::destroy($stud_id);
         //$students->delete($students);
         return redirect ('ProfileViewStudent');
     }

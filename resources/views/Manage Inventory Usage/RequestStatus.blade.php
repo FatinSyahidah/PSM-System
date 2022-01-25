@@ -6,16 +6,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <!-- Custom fonts for this template -->
-         
-         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.min.css"/>
-         
-         <style>
-            .float-right{
-                margin-left: -60px;
-            }
-         </style>
-
+         <!-- Custom fonts for this template -->    
+         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.min.css"/>  
     </head>
 
     <body> 
@@ -48,6 +40,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                         <!--Fetch data from database -->
                                         @foreach($data as $student)
                                             <tr>
                                                 <td>{{$student->inv_ID}}</td>
@@ -55,7 +48,7 @@
                                                 <td>{{$student->stud_name}}</td>
                                                 <td>{{$student->inv_name}}</td>
                                                 <td>{{$student->quantity}}</td>
-                                                <td class="text-success">{{$student->req_status}}</td>
+                                                <td>{{$student->req_status}}</td>
                                                 
                                             </tr>
                                         @endforeach
