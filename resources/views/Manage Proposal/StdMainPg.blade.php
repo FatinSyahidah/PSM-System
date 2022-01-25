@@ -47,20 +47,18 @@
             <table class="table table-hover">
                 <thead class="table-primary">
                 <tr>
-                    <th>No</th>
-                    <th>Date</th>
-                    <th>Lecturer Name</th>
                     <th>Title</th>
+                    <th>Lecturer Name</th>
+                    <th>Date</th>
                     <th colspan="2">Actions</th>
                 </tr>
             </thead>
             <tbody>
             @foreach($proposal as $proposal)
                 <tr>
-                    <td>{{$proposal->name}}</td>
+                    <td></td>
+                    <td>{{$proposal->stud_advisor}}</td>
                     <td>{{$proposal->date_submit}}</td>
-                    <td></td>
-                    <td></td>
                     <td><a type="button" href="/EditReq" class="btn btn-primary float-center" 
                     data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</a></td>
                     <td><a type="button" href="/form" class="btn btn-primary float-center" 

@@ -43,4 +43,11 @@ class ProposalsController extends Controller
         $students = DB::table('proposals')->select('stud_id','name')->get();
         return view('Manage Proposal.newReq')->with('proposals',$proposals);
     }
+    public function get()
+    {
+        $proposal = DB::table('proposals')
+                    ->join('student', 'student.stud_id', 'stud_id')
+                    ->select('proposals.*', 'student.stud_advisor', 'student.name')
+                    ->get();
+    }
 }

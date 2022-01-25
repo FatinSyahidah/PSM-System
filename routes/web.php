@@ -110,13 +110,13 @@ Route::get('/TotalReq', function () {
 
 //Student
 Route::get('StdMainPg', function () {
-    $student = \App\Models\ProposalModel\proposals::all();
-    return view('Manage Proposal/StdMainPg', compact('student'));
+    $proposal = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/StdMainPg', compact('proposal'));
 });
-Route::get('StdMainPg', function () {
+/*Route::get('StdMainPg', function () {
     $proposals = \App\Models\ProposalModel\proposals::all();
     return view('Manage Proposal/newReq', compact('proposals'));
-});
+});*/
 
 Route::view('form', 'Manage Proposal/newReq');
 Route::post('submit', 'ProposalController@save');
