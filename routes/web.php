@@ -94,7 +94,24 @@ Route::get('SVbooking', function() {
     return view('Manage Supervisor Hunting/SVbooking');
 });
 
+
+
 //Manage Logbook
+Route::get('Logbook', function () {
+    return view('Manage Logbook/Logbook');
+});
+Route::get('AddLogbook', function () {
+    return view('Manage Logbook/AddLogbook');
+});
+Route::get('EditLogbook', function () {
+    return view('Manage Logbook/EditLogbook');
+});
+Route::get('DeleteLogbook', function () {
+    return view('Manage Logbook/DeleteLogbook');
+});
+Route::get('ViewLogbook', function () {
+    return view('Manage Logbook/ViewLogbook');
+});
 
 //Manage Proposal
 //Lecturer
