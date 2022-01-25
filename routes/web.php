@@ -77,6 +77,8 @@ Route::get('ProfileViewStudent', 'App\Http\Controllers\StudentController@viewstu
 
 Route::get('ProfileViewStudent', 'App\Http\Controllers\StudentController@deletestud');
 
+
+
 Route::get('ProfileViewStudent', function(){
     $students = \App\Models\ProfileModel\student::all();
     return view('Manage Profile/ProfileViewStudent',compact('students'));

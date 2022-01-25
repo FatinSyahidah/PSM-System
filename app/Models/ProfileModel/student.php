@@ -27,7 +27,7 @@ class student extends  Authenticatable
         'stud_add',
         'stud_advisor',
         'stud_psmTitle',
-        'stud_psmPhase'
+        
         
     ];
 

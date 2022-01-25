@@ -21,8 +21,8 @@ class Lecturer extends Authenticatable
         'email',
         'password',
         'lect_add',
-        'lect_expertise',
-        'lect_profilePic'
+        'lect_expertise'
+        
 
     ];
 
