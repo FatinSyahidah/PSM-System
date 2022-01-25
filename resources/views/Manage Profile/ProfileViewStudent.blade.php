@@ -82,7 +82,7 @@
                 <!--Button trigger modal-->
                 <!-- Button trigger modal -->
                 <div class = "col-12">
-                <button a href="students/{{$student->stud_id}}/deletestud" type="button" class="btn btn-primary float-right" onclick="var result = confirm('Delete Profile?');
+                <button a href="StudentController/{{$student->stud_id}}/deletestud" type="button" class="btn btn-primary float-right" onclick="var result = confirm('Delete Profile?');
                        if (result){
                            event.preventDefault();
 
