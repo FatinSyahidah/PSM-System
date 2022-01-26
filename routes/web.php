@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\ProposalController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\LogbookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,7 +109,12 @@ Route::get('studList', function() {
 });
 
 
-//Manage Logbook
+//manage logbook
+Route::resource('logbooks', ProductController::class);
+
+
+
+/*//Manage Logbook
 Route::get('Logbook', function () {
     return view('Manage Logbook/Logbook');
 });
@@ -130,6 +136,7 @@ Route::get('LogbookLecturer', function () {
 Route::get('ViewLogbookLect', function () {
     return view('Manage Logbook/ViewLogbookLect');
 });
+*/
 
 //Manage Proposal
 //Lecturer
