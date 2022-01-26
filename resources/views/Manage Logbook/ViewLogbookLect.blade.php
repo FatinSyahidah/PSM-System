@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.LectMaster')
 
 @section('content')
 
@@ -23,38 +23,27 @@
                 <div class="card-body"><br>
             
                 <p><strong>STUDENT ID </strong></p>
-                {{$student->stud_matricID}}       
                 <br><br><br>
                 
-                <p><strong>STUDENT NAME </strong></p>
-                {{$student->stud_name}}
-                <br><br><br>
-
                 <p><strong>MEETING DATE </strong></p>
-                {{$student->meeting_date}}
                 <br><br><br>
                 
                 <p><strong> START TIME </strong></p>
-                {{$student->start_time}}
                <br><br><br>
                 
                 <p><strong> END TIME </strong></p>
-                {{$student->end_time}}
                 <br><br><br>
                 
                 <p><strong>CURRENT PROGRESS </strong></p>
-                {{$student->currrent_progress}}
                 <br><br><br>
                 
                 <p><strong>DISCUSSION DETAIL </strong></p>
-                {{$student->discussion_details}}
                 <br><br><br>
                 
                 <p><strong>ACTION PLAN </strong></p>
-                {{$student->action_plan}}
                 <br><br><br>
                 
-                <a href="Logbook" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <a href="LogbookLecturer" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                 <i class="fa-sm text-white-50"></i> Back</a>
                 
                 </div>

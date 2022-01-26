@@ -54,52 +54,37 @@
                                 </tr>
                             </thead>
                             
+
                             <tbody>
-                                <tr>
-                                    <td>21/11/2021</td>
-                                    <td>1400</td>
-                                    <td>1500</td>
-                                    <td>
-                                        <a href="ViewLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
-                                        <button type="button" class="butangView btn btn-sm btn-success">View </button> </a>
-                                        
-                                        <a href="EditLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
-                                        <button type="button" class="butangUpdate btn btn-sm btn-primary">Update </button> </a>
-                                        
-                                        <a href="DeleteLogbook" class="d-none d-sm-inline-block fa-sm text-white-50" onclick="return confirm('Are you sure want to delete?')">
-                                        <button type="button" class="butangDelete btn btn-sm btn-danger">Delete </button> </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>23/11/2021</td>
-                                    <td>1400</td>
-                                    <td>1500</td>
-                                    <td>
-                                        <a href="viewLogbook.html" class="d-none d-sm-inline-block fa-sm text-white-50">
-                                        <button type="button" class="butangView">View </button> </a>
-                                        
-                                        <a href="updateLogbook.html" class="d-none d-sm-inline-block fa-sm text-white-50">
-                                        <button type="button" class="butangUpdate">Update </button> </a>
-                                        
-                                        <a href="#" class="d-none d-sm-inline-block fa-sm text-white-50" onclick="return confirm('Are you sure want to delete?')">
-                                        <button type="button" class="butangDelete">Delete </button> </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>03/12/2021</td>
-                                    <td>1400</td>
-                                    <td>1500</td>
-                                    <td>
-                                        <a href="viewLogbook.html" class="d-none d-sm-inline-block fa-sm text-white-50">
-                                        <button type="button" class="butangView">View </button> </a>
-                                        
-                                        <a href="updateLogbook.html" class="d-none d-sm-inline-block fa-sm text-white-50">
-                                        <button type="button" class="butangUpdate">Update </button> </a>
-                                        
-                                        <a href="#" class="d-none d-sm-inline-block fa-sm text-white-50" onclick="return confirm('Are you sure want to delete?')">
-                                        <button type="button" class="butangDelete">Delete </button> </a>
-                                    </td>
-                                </tr>
+                                <!--Fetch data from database -->
+                                @foreach($data as $student)
+                                    <tr>
+                                        <td>{{$student->stud_matricID}}</td>
+                                        <td>{{$student->stud_name}}</td>
+                                        <td>{{$student->meeting_date}}</td>
+                                        <td>{{$student->start_time}}</td>
+                                        <td>{{$student->end_time}}</td>
+                                        <td>{{$student->currrent_progress}}</td>
+                                        <td>{{$student->discussion_details}}</td>
+                                        <td>{{$student->action_plan}}</td>
+                                        <td> 
+                                            <!--Button to update detail -> do update in controller -->
+                                            <a href="{{$student->inv_ID}}/updateDetail" class="btn btn-success btn-sm text-white edit" data-bs-toggle="modal" data-bs-target="#editModal"><span class="icon text-white-50">
+                                            <i class="fas fa-edit text-white-50"></i>
+                                                </span>EDIT</a>
+                                        </td>
+                                        <td>
+                                            <a href="ViewLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
+                                            <button type="button" class="butangView btn btn-sm btn-success">View </button> </a>
+                                            
+                                            <a href="EditLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
+                                            <button type="button" class="butangUpdate btn btn-sm btn-primary">Update </button> </a>
+                                            
+                                            <a href="DeleteLogbook" class="d-none d-sm-inline-block fa-sm text-white-50" onclick="return confirm('Are you sure want to delete?')">
+                                            <button type="button" class="butangDelete btn btn-sm btn-danger">Delete </button> </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

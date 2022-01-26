@@ -124,6 +124,12 @@ Route::get('DeleteLogbook', function () {
 Route::get('ViewLogbook', function () {
     return view('Manage Logbook/ViewLogbook');
 });
+Route::get('LogbookLecturer', function () {
+    return view('Manage Logbook/LogbookLecturer');
+});
+Route::get('ViewLogbookLect', function () {
+    return view('Manage Logbook/ViewLogbookLect');
+});
 
 //Manage Proposal
 //Lecturer
