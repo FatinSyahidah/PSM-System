@@ -10,15 +10,10 @@
         
          <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.min.css"/>
          
-         
+         <!-- style the float right button for request modal-->
          <style>
             .float-right{
                 margin-left: -60px;
-            }
-
-            .center {
-                margin-left: auto;
-                margin-right: auto;
             }
          </style>
 
@@ -26,7 +21,7 @@
 
     <body> 
         <div class = "container">
-
+             <!--return alert message if data successfully inserted -->
             @if(session('success'))
                 <div class="alert alert-primary" role="alert">
                 {{session('success')}}
@@ -35,7 +30,7 @@
 
             <div class = "row">
                 <div class="col-6">
-                    <h2 style="color:black">Request Inventory</h2>
+                    <h2 style="color:black">Request Inventory</h2> <!-- Page Title at page content -->
                 </div> 
 
                 <div class="col-6">

@@ -53,7 +53,7 @@
                    </tr>
                    <tr>
                        <td>Phone Number:&emsp;</td>
-                       <td>{{$students->stud_hpNum}}</td>
+                       <td>{{$student->stud_hpNum}}</td>
                    </tr>
                    <tr>
                        <td>Email:&emsp;</td>
@@ -61,7 +61,7 @@
                    </tr>
                    <tr>
                        <td>Address:&emsp;</td>
-                       <td>{{$studen->stud_add}}</td>
+                       <td>{{$student->stud_add}}</td>
                    </tr>
                    <tr>
                        <td>Academic Advisor:&emsp;</td>
@@ -82,14 +82,9 @@
                 <!--Button trigger modal-->
                 <!-- Button trigger modal -->
                 <div class = "col-12">
-                <button a href="StudentController/{{$student->stud_id}}/deletestud" type="button" class="btn btn-primary float-right" onclick="var result = confirm('Delete Profile?');
-                       if (result){
-                           event.preventDefault();
-
-                           document.getElementById('delete-form-{{$student->stud_id}}').submit();}"
-                         data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button a href="{{$student->stud_id}}/deletestud" type="button" class="btn btn-primary float-right" onclick="var result = confirm('Delete Profile?');">
                     Delete Profile
-                    </button>
+                </button>
                </div>
                  <!--Edit Profile Button-->
                     <!--Button trigger modal-->
