@@ -88,7 +88,15 @@ Route::get('ProfileViewStudent', function(){
 Route::get('SVbooking', function() {
     return view('Manage Supervisor Hunting/SVbooking');
 });
-
+Route::get('viewSVbooking', function() {
+    return view('Manage Supervisor Hunting/viewSVbooking');
+});
+Route::get('studRequest', function() {
+    return view('Manage Supervisor Hunting/studRequest');
+});
+Route::get('studList', function() {
+    return view('Manage Supervisor Hunting/studList');
+});
 
 
 //Manage Logbook
