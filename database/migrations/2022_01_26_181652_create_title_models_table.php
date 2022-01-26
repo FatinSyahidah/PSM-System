@@ -13,8 +13,14 @@ class CreateTitleModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('title_models', function (Blueprint $table) {
-            $table->id();
+        Schema::create('title', function (Blueprint $table) {
+            $table->increments('title_ID');
+            $table->string('title_headline');
+            $table->mediumText('title_detail');
+            $table->string('title_status')->nullable();
+            $table->string('title_booked')->nullable();
+            $table->string('lect_id')->nullable();
+            $table->string('stud_id')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ class CreateTitleModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('title_models');
+        Schema::dropIfExists('title');
     }
 }
