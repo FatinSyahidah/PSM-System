@@ -31,9 +31,10 @@
         </div>
         <div style ="margin-left:50px; margin-left: 1em; margin-top: 12px">
          <br>
-         @csrf
+        
          @foreach($students as $student)
         <form action="/ProfileStudentEdit{{$student->stud_id}}" method = "post" class="form-group" style="width:70%; margin-left:15%" action = /ProfileViewStudent.blade.php >
+        @csrf
        <input type ="hidden" name="_token" value="<?php echo csrf_token();?>">
             <tr>
             <label class ="form-group">Name:&emsp;</label>

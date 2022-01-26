@@ -28,7 +28,7 @@ class StudentController extends Controller
         
             DB::delete('delete from students where stud_id = ?',[$stud_id]);
             echo "Record deleted successfully.<br/>";
-            echo '<a href = "/My Profile/ProfileViewStudent">Click Here</a> to go back.';
+            //echo '<a href = "/My Profile/ProfileViewStudent">Click Here</a> to go back.';
 
        // $students = \App\Models\ProfileModel\student::find($stud_id);
         //$students->Delete();
@@ -37,9 +37,9 @@ class StudentController extends Controller
     
     //Edit Student Profile
 
-    public function vieweditstud(){
-       $students = \App\Models\ProfileModel\student::with('student')->where('stud_id')->get();
-       return view('Manage Profile.ProfileStudentEdit/{{stud_id}}',['students'=>$students]);
+    public function vieweditstud($stud_id){
+       $students = \App\Models\ProfileModel\student::find($stud_id);
+       return view('Manage Profile.ProfileStudentEdit');
     }
 
     public function editstud(Request $request,$stud_id)
