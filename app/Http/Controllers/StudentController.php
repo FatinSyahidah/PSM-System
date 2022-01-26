@@ -39,7 +39,7 @@ class StudentController extends Controller
 
     public function vieweditstud(){
        $students = \App\Models\ProfileModel\student::with('student')->where('stud_id')->get();
-       return view('ProfileStudentEdit/{{stud_id}}',['students'=>$students]);
+       return view('Manage Profile.ProfileStudentEdit/{{stud_id}}',['students'=>$students]);
     }
 
     public function editstud(Request $request,$stud_id)

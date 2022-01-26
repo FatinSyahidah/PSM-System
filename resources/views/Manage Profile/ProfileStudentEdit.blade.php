@@ -31,49 +31,48 @@
         </div>
         <div style ="margin-left:50px; margin-left: 1em; margin-top: 12px">
          <br>
+         @csrf
          @foreach($students as $student)
-        <form action="/ProfileStudentEdit{{$student->stud_id}}" method = "post" class="form-group" style="width:70%; margin-left:15%" >
+        <form action="/ProfileStudentEdit{{$student->stud_id}}" method = "post" class="form-group" style="width:70%; margin-left:15%" action = /ProfileViewStudent.blade.php >
        <input type ="hidden" name="_token" value="<?php echo csrf_token();?>">
-        
-            <table>
-                <tr>
-                    <td>Name:&emsp;</td>
-                    <td><input type="text" name="name" value="{{$student->name}} " required></td>
-                </tr>
-                <tr>
-                       <td>Matric ID:</td>
-                       <td><input type="text" name="stud_matricID " value="{{$student->stud_matricID}} " required></td>
-                   </tr>
-                   <tr>
-                       <td>Course:&emsp;</td>
-                       <td><input type="text" name="stud_course" value="{{$student->stud_course}}" required></td>
-                   </tr>
-                   <tr>
-                       <td>Year of Study:</td>
-                       <td><input type="text" name="stud_year" value="{{$student->stud_year}}" required></td>
-                   </tr>
-                   <tr>
-                       <td>Phone Number:&emsp;&emsp;</td>
-                       <td><input type="text" name="stud_hpNum" value="{{$student->stud_hpNum}}" required></td>
-                   </tr>
-                   <tr>
-                       <td>Email:&emsp;</td>
-                       <td><input type="text" name="email" value="{{$student->email}}" required></td>
-                   </tr>
-                   <tr>
-                       <td>Address:&emsp;</td>
-                       <td><input type="text" name="stud_add" value="{{$student->stud_add}}" required></td>
-                   </tr>
-                   <tr>
-                       <td>Academic Advisor:&emsp;</td>
-                       <td><input type="text" name="stud_advisor " value="{{$student->stud_advisor}}" required></td>
-                   </tr>
-                   <tr>
-                       <td>PSM Title:&emsp;</td>
-                       <td><input type="text" name="stud_psmTitle" value="{{$student->stud_psmTitle}}" required></td>
-                   </tr>
+            <tr>
+            <label class ="form-group">Name:&emsp;</label>
+            <td><input type="text" class = "form-group" name="name" value="{{$student->name}} " required></td>
+            </tr>
+            <tr>
+            <label class = "form-group">Matric ID:</label>
+            <td><input type="text" class="form-group" name="stud_matricID " value="{{$student->stud_matricID}} " required></td>
+            </tr>
+            <tr>
+            <label class = "form-group">Course:&emsp;</label>
+            <td><input type="text" name="stud_course" value="{{$student->stud_course}}" required></td>
+            </tr>
+            <tr>
+            <label class = "form-group">Year of Study:</label>
+            <td><input type="text" name="stud_year" value="{{$student->stud_year}}" required></td>
+           </tr>
+            <tr>
+           <label class = "form-group">Phone Number:&emsp;&emsp;</label>
+            <td><input type="text" name="stud_hpNum" value="{{$student->stud_hpNum}}" required></td>
+            </tr>
+            <tr>
+            <label class = "form-group">Email:&emsp;</label>
+            <td><input type="text" name="email" value="{{$student->email}}" required></td>
+            </tr>
+            <tr>
+            <label class = "form-group">Address:&emsp;</label>
+            <td><input type="text" name="stud_add" value="{{$student->stud_add}}" required></td>
+            </tr>
+            <tr>
+            <label class = "form-group">Academic Advisor:&emsp;</label>
+            <td><input type="text" name="stud_advisor " value="{{$student->stud_advisor}}" required></td>
+            </tr>
+            <tr>
+            <label class = "form-group">PSM Title:&emsp;</label>
+            <td><input type="text" name="stud_psmTitle" value="{{$student->stud_psmTitle}}" required></td>
+         </tr>
 
-        </table>
+        
         
         </div>
         </div>
