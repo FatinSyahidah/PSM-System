@@ -47,6 +47,8 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
                                     <th>Meeting Date</th>
                                     <th>Start Time</th>
                                     <th>End Time</th>
@@ -63,10 +65,6 @@
                                         <td>{{$student->stud_name}}</td>
                                         <td>{{$student->meeting_date}}</td>
                                         <td>{{$student->start_time}}</td>
-                                        <td>{{$student->end_time}}</td>
-                                        <td>{{$student->currrent_progress}}</td>
-                                        <td>{{$student->discussion_details}}</td>
-                                        <td>{{$student->action_plan}}</td>
                                         <td> 
                                             <!--Button to update detail -> do update in controller -->
                                             <a href="{{$student->inv_ID}}/updateDetail" class="btn btn-success btn-sm text-white edit" data-bs-toggle="modal" data-bs-target="#editModal"><span class="icon text-white-50">
@@ -74,7 +72,7 @@
                                                 </span>EDIT</a>
                                         </td>
                                         <td>
-                                            <a href="ViewLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
+                                            <a href="{{$student->logbook_ID}}/ViewLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
                                             <button type="button" class="butangView btn btn-sm btn-success">View </button> </a>
                                             
                                             <a href="EditLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
