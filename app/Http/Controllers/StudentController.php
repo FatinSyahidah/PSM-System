@@ -26,5 +26,11 @@ class StudentController extends Controller
         //$students->delete($students);
         return redirect ('ProfileViewStudent');
     }
+
+    public function editstud($stud_id)
+    {
+        $students = \App\Models\ProfileModel\students::find($stud_id);
+          return view('ProfileStudentEdit');
+    }
         
 }

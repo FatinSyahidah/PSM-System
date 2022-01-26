@@ -31,7 +31,7 @@
         </div> 
         
 
-           
+           <!--Call Student Profile Data From Database-->
            <div class="card-body">
            @foreach($students as $student)
                <table>
@@ -77,7 +77,7 @@
                <br>
           </div>
           
-
+           <!--Delete Profile Button-->
           <div class = "row-12">
                 <!--Button trigger modal-->
                 <!-- Button trigger modal -->
@@ -91,7 +91,7 @@
                     Delete Profile
                     </button>
                </div>
-
+                 <!--Edit Profile Button-->
                     <!--Button trigger modal-->
                     <!--Button trigger modal-->
                 <div class = "col-10">

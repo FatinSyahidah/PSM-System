@@ -23,30 +23,22 @@
     <body> 
       <div class = "container">
 
-
+       @csrf
      <div class = "row">
                 <div class="col-6">
                     <h2 style="color:black">Edit MyProfile</h2>
                 </div>
         </div>
         <div style ="margin-left:50px; margin-left: 1em; margin-top: 12px">
-         <table>
-                <tr>
-                    <td>Profile Image:&emsp;&emsp;</td>
-                </tr>
-                  <tr>
-                    <td><img src=" " width="150px" height="200px" border="1px solid black" style="margin-top: 2px;"></td>
-                    <td colspan="5" style="text-align: right"><button type="submit" name="update" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Upload Photo</button></td>
-                  </tr>
-        </table>
+         <br>
+         @foreach($students as $student)
+        <form action="/ProfileStudentEdit/{{$student->stud_id}}" method = "post" class="form-group" style="width:70%; margin-left:15%" action= "/action_page.php">
+        <input type ="hidden" name="_token" value="<?php echo csrf_token();?>">
         
-
-        
-        <div style ="margin-left: 50px; margin-left: 12em;">
             <table>
                 <tr>
                     <td>Name:&emsp;</td>
-                    <td><input type="text" name=" " value=" " required></td>
+                    <td><input type="text" name="name" value="{{$student->name}} " required></td>
                 </tr>
                 <tr>
                        <td>Matric ID:</td>
