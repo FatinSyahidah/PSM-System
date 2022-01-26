@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <!-- Custom fonts for this template -->
          <link rel="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
          <link rel="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
          <link rel="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css">
@@ -23,46 +22,45 @@
     <body> 
         <div class = "container">
 
-
-            <div class = "row">
+            <div class = "row">          <!--Header -->
                 <div class="col-6">
-                    <h2 style="color:black">View My Request</h2>
+                    <h2 style="color:black">VIEW MY REQUEST</h2>         <!--Title page -->
                 </div> 
 
-                <div class="col-6">
-                <!--Button trigger modal-->
-                <!-- Button trigger modal -->
+                <div class="col-6">   <!--Button add new request -->
                     <a type="button" href="/form" class="btn btn-primary float-right" 
-                    data-bs-toggle="modal" data-bs-target="#exampleModal">Add Request</a>
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">ADD REQUEST</a>
                 </div>
             </div>
 
             <div class="card-body">
             
-
-            
             @yield('content')
             <br>
             <div class= "column">
-            <table class="table table-hover">
+            <table class="table table-hover">        <!--Table display the list -->
                 <thead class="table-primary">
                 <tr>
-                    <th>Title</th>
-                    <th>Lecturer Name</th>
-                    <th>Date</th>
-                    <th colspan="2">Actions</th>
+                    <th>NO</th>
+                    <th>DATE</th>
+                    <th>LECTURER NAME</th>
+                    <th>TITLE</th>
+                    <th colspan="3">ACTIONS</th>
                 </tr>
             </thead>
             <tbody>
             @foreach($proposal as $proposal)
                 <tr>
-                    <td></td>
-                    <td>{{$proposal->stud_advisor}}</td>
+                    <td>{{$proposal->proposal_ID}}</td>
                     <td>{{$proposal->date_submit}}</td>
-                    <td><a type="button" href="/EditReq" class="btn btn-primary float-center" 
-                    data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</a></td>
-                    <td><a type="button" href="/form" class="btn btn-primary float-center" 
-                    data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</a></td>
+                    <td>{{$proposal->stud_advisor}}</td>
+                    <td>{{$proposal->stud_psmTItle}}</td>
+                    <td><a type="button" href="/EditReq" class="btn btn-success float-center" 
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">VIEW STATUS</a></td>
+                    <td><a type="button" href="/EditReq" class="btn btn-warning float-center" 
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">EDIT</a></td>
+                    <td><a type="button" href="/form" class="btn btn-danger float-center" 
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">DELETE</a></td>
                 </tr>
             @endforeach
             </tbody>
