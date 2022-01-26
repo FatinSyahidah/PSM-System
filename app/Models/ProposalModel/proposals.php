@@ -19,8 +19,6 @@ class proposals extends Model
         'stud_proposal',
         'status_proposal',
         'date_submit',
-        'total_newReq'.
-        'total_Req',
     ];
 
     /*public function student()

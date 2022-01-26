@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\ProposalController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\LogbookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,7 +109,12 @@ Route::get('studList', function() {
 });
 
 
-//Manage Logbook
+//manage logbook
+Route::resource('logbooks', ProductController::class);
+
+
+
+/*//Manage Logbook
 Route::get('Logbook', function () {
     return view('Manage Logbook/Logbook');
 });
@@ -130,17 +136,12 @@ Route::get('LogbookLecturer', function () {
 Route::get('ViewLogbookLect', function () {
     return view('Manage Logbook/ViewLogbookLect');
 });
+*/
 
 //Manage Proposal
 //Lecturer
 Route::get('LectMainPg', function () {
     return view('Manage Proposal/LectMainPg');
-});
-Route::get('/ListNewReq', function () {
-    return view('Manage Proposal/ListNewReq');
-});
-Route::get('/TotalReq', function () {
-    return view('Manage Proposal/TotalReq');
 });
 
 //Student
@@ -148,13 +149,11 @@ Route::get('StdMainPg', function () {
     $proposal = \App\Models\ProposalModel\proposals::all();
     return view('Manage Proposal/StdMainPg', compact('proposal'));
 });
-/*Route::get('StdMainPg', function () {
-    $proposals = \App\Models\ProposalModel\proposals::all();
-    return view('Manage Proposal/newReq', compact('proposals'));
-});*/
-
+Route::get('StdMainPg/{proposal_ID}', 'App\Http\Controllers\ProposalsController@delete')->name('delete');
 Route::view('form', 'Manage Proposal/newReq');
 Route::post('submit', 'ProposalController@save');
+
+
 
 //Manage Title
 Route::get('StatusTitle', function () {   //Student
@@ -184,6 +183,8 @@ Route::get('ViewTitle', function () {
 Route::get('TitleList', function () {
     return view('Manage Title/TitleList');
 });
+
+
 
 //Manage Inventory Usage
 Route::get('RequestInventory', function () {
