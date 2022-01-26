@@ -32,7 +32,7 @@
         <div style ="margin-left:50px; margin-left: 1em; margin-top: 12px">
          <br>
          @foreach($students as $student)
-        <form action="/ProfileStudentEdit/{{$student->stud_id}}" method = "post" class="form-group" style="width:70%; margin-left:15%" action= "/action_page.php">
+        <form action="/ProfileStudentEdit/{{$student->stud_id}}" method = "POST" class="form-group" style="width:70%; margin-left:15%" >
         <input type ="hidden" name="_token" value="<?php echo csrf_token();?>">
         
             <table>
@@ -42,39 +42,39 @@
                 </tr>
                 <tr>
                        <td>Matric ID:</td>
-                       <td><input type="text" name=" " value=" " required></td>
+                       <td><input type="text" name="stud_matricID " value="{{$student->stud_matricID}} " required></td>
                    </tr>
                    <tr>
                        <td>Course:&emsp;</td>
-                       <td><input type="text" name=" " value=" " required></td>
+                       <td><input type="text" name="stud_course" value="{{$student->stud_course}}" required></td>
                    </tr>
                    <tr>
                        <td>Year of Study:</td>
-                       <td><input type="text" name=" " value=" " required></td>
+                       <td><input type="text" name="stud_year" value="{{$student->stud_year}}" required></td>
                    </tr>
                    <tr>
                        <td>Phone Number:&emsp;&emsp;</td>
-                       <td><input type="text" name=" " value=" " required></td>
+                       <td><input type="text" name="stud_hpNum" value="{{$student->stud_hpNum}}" required></td>
                    </tr>
                    <tr>
                        <td>Email:&emsp;</td>
-                       <td><input type="text" name=" " value=" " required></td>
+                       <td><input type="text" name="email" value="{{$student->email}}" required></td>
                    </tr>
                    <tr>
                        <td>Address:&emsp;</td>
-                       <td><input type="text" name=" " value=" " required></td>
+                       <td><input type="text" name="stud_add" value="{{$student->stud_add}}" required></td>
                    </tr>
                    <tr>
                        <td>Academic Advisor:&emsp;</td>
-                       <td><input type="text" name=" " value=" " required></td>
+                       <td><input type="text" name="stud_advisor " value="{{$student->stud_advisor}}" required></td>
                    </tr>
                    <tr>
                        <td>PSM Title:&emsp;</td>
-                       <td><input type="text" name=" " value=" " required></td>
+                       <td><input type="text" name="stud_psmTitle" value="{{$student->stud_psmTitle}}" required></td>
                    </tr>
 
         </table>
-
+        </form>
         </div>
         </div>
 
@@ -95,7 +95,7 @@
                     </button>
                 </div>
 
-
+               @endforeach
 
             </div>
 

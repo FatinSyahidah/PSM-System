@@ -73,19 +73,19 @@ Route::view('/lecturer', 'lecturer');
 
 
 //Manage Profile
-//Student
-//View Route
+//Student Profile
+//View Student Route
 Route::get('/ProfileViewStudent', 'App\Http\Controllers\StudentController@viewstudent');
 Route::get('/ProfileViewStudent', function(){
     $students = \App\Models\ProfileModel\student::find('stud_id');
     return view('Manage Profile/ProfileViewStudent',compact('students'));
 });
-//Delete Route
+//Delete Student Route
 Route::get('/ProfileViewStudent', 'App\Http\Controllers\StudentController@deletestud');
-//Edit Route
-Route::get('/ProfileStudentEdit', 'App\Http\Controllers\StudentController@editstud');
+//Edit Student Route
+Route::get('/ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@editstud');
 
-//Lecturer
+//Lecturer Profile
 //View Route
 //Delete Route
 //Edit Route
