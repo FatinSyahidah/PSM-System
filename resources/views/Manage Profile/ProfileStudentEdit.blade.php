@@ -53,23 +53,23 @@
            
             <div class="mb-3">
             <label for ="exampleFormControlInput5" class="form-label">Phone Number:</label>
-            <input type="text" name="stud_hpNum" id="exampleFormInput4" value="{{$students->stud_hpNum}}"></div>
+            <input type="text" name="stud_hpNum" id="exampleFormInput5" value="{{$students->stud_hpNum}}"></div>
             
             <div class="mb-3">
-            <label for ="exampleFormControlInput6" class="form-label">Email:</label>
-            <input type="text" name="email" id="exampleFormInput4" value="{{$students->email}}"></div>
+            <label for ="exampleFormControlInput7" class="form-label">Email:</label>
+            <input type="text" name="email" id="exampleFormInput7" value="{{$students->email}}"></div>
             
             <div class="mb-3">
-            <label for ="exampleFormControlInput6" class="form-label">Address:</label>
-            <input type="text" name="stud_add" id="exampleFormInput4" value="{{$students->stud_add}}"></div>
+            <label for ="exampleFormControlInput8" class="form-label">Address:</label>
+            <input type="text" name="stud_add" id="exampleFormInput8" value="{{$students->stud_add}}"></div>
             
             <div class="mb-3">
-            <label for ="exampleFormControlInput6" class="form-label">Academic Advisor:</label>
-            <input type="text" name="stud_advisor " id="exampleFormInput4" value="{{$students->stud_advisor}}"></div>
+            <label for ="exampleFormControlInput9" class="form-label">Academic Advisor:</label>
+            <input type="text" name="stud_advisor " id="exampleFormInput9" value="{{$students->stud_advisor}}"></div>
             
             <div class="mb-3">
-            <label for ="exampleFormControlInput6" class="form-label">PSM Title:</label>
-            <input type="text" name="stud_psmTitle" id="exampleFormInput4" value="{{$students->stud_psmTitle}}"></div>
+            <label for ="exampleFormControlInput10" class="form-label">PSM Title:</label>
+            <input type="text" name="stud_psmTitle" id="exampleFormInput10" value="{{$students->stud_psmTitle}}"></div>
          
 
         
