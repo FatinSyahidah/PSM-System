@@ -84,8 +84,8 @@ Route::get('/ProfileViewStudent', function(){
 Route::get('ProfileViewStudent/{stud_id}', 'App\Http\Controllers\StudentController@deletestud')->name('deletestud');
 
 //Edit Student Profile Route
-Route::get('/ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@vieweditstud')->name('vieweditstud');
-Route::post('/ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@editstud');
+Route::get('/ProfileViewStudent/{stud_id}/ProfileStudentEdit', 'App\Http\Controllers\StudentController@vieweditstud');
+Route::post('/ProfileViewStudent/{stud_id}/updatestud', 'App\Http\Controllers\StudentController@updatestud');
 
 //Lecturer Profile
 //View Route
