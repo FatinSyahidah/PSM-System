@@ -22,7 +22,7 @@ class CreateLogbooksTable extends Migration
             $table->time('end_time')->nullable();
             $table->string('current_progress')->nullable();
             $table->string('discussion_details');->nullable();
-            $table->string('action_plan')
+            $table->string('action_plan');
         });
     }
 
