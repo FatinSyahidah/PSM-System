@@ -89,10 +89,19 @@ Route::get('/ProfileViewStudent/{stud_id}/ProfileStudentEdit', 'App\Http\Control
 Route::post('/ProfileViewStudent/{stud_id}/updatestud', 'App\Http\Controllers\StudentController@updatestud');
 
 //Lecturer Profile
-//View Route
-//Delete Route
-//Edit Route
+//View Lecturer Profile Route
+Route::get('/ProfileViewLecturer', 'App\Http\Controllers\LecturerController@viewlecturer');
+Route::get('/ProfileViewLecturer', function(){
+    $students = \App\Models\ProfileModel\lecturer::all();
+    return view('Manage Profile/ProfileViewLecturer',compact('lecturers'));
+});
 
+//Delete Lecturer Profile Route
+Route::get('ProfileViewLecturer/{lect_id}', 'App\Http\Controllers\LecturerController@deletelect')->name('deletelect');
+
+//Edit  Lecturer Profile Route
+Route::get('/ProfileViewLecturer/{lect_id}/ProfileLecturerEdit', 'App\Http\Controllers\LecturerController@vieweditlect');
+Route::post('/ProfileViewLecturer/{lect_id}/updatelect', 'App\Http\Controllers\LecturerController@updatelect');
 
 //Manage SV
 Route::get('SVbooking', function() {
