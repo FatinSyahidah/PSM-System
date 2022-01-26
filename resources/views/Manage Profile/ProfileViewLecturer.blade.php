@@ -39,35 +39,35 @@
                <table>
                    <tr>
                        <td>Name:&emsp;</td>
-                       <td><?php echo $row['lect_name']?></td>
+                       <td><></td>
                    </tr>
                    <tr>
                        <td>Staff ID:&emsp;</td>
-                       <td><?php echo $row['lect_staffID']?></td>
+                       <td><></td>
                    </tr>
                    <tr>
                        <td>Field:&emsp;</td>
-                       <td><?php echo $row['lect_field']?></td>
+                       <td><></td>
                    </tr>
                    <tr>
                        <td>Office Number:&emsp;</td>
-                       <td><?php echo $row['lect_officeNum']?></td>
+                       <td><></td>
                    </tr>
                    <tr>
                        <td>Phone Number:&emsp;</td>
-                       <td><?php echo $row['lect_hpNum']?></td>
+                       <td><></td>
                    </tr>
                    <tr>
                        <td>Email:&emsp;</td>
-                       <td><?php echo $row['lect_email']?></td>
+                       <td><></td>
                    </tr>
                    <tr>
                        <td>Address:&emsp;</td>
-                       <td><?php echo $row['lect_add']?></td>
+                       <td><></td>
                    </tr>
                    <tr>
                        <td>Expertise:&emsp;</td>
-                       <td><?php echo $row['lect_expertise']?></td>
+                       <td><></td>
                    </tr>
                    
                </table>

@@ -22,35 +22,18 @@
 
     <body> 
         <div class = "container">
-            
-            <table class="table">
-            @foreach($proposal as $proposal)
-                <thead>
-                    <tr>Student Name</tr>
-                    <tr>{{$proposal->stud_name}}</tr>
-                </thead>
-                <tbody>
+
+
+            <div class = "row">
+                <div class="col-6">
+                    <h2 style="color:black">Student Request Approval</h2>
+                </div> 
+
                 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>{{$proposal->date_submit}}</td>
-                </tr>
-                @endforeach
-                </tbody>
-            </table>
-
-
-            <form action="submit" method="POST">
-                <div class="form-group mb-">
-                    <label for="">PROPOSAL</label>
-                    <input type="file" name="stud_proposal" class="form-control">
-                </div>
-                <div class="form-group mb-3">
-                    <button type="submit" class="btn btn-primary">SUBMIT</button>
-                </div>
-            </form>
+            </div>
         </div>
-    </body>
+
+        </body>
 </html>
+
 @endsection

@@ -26,15 +26,12 @@
 
      <div class = "card-header">
                 
-                    <h2 style="color:b lack">My Profile</h2>
+                    <h2 style="color:black">My Profile</h2>
                 
         </div> 
-        <div style ="margin-left:40px; margin-left: 2em;">
-            <img src="prof pic.jpg"  style="height:106px;width:106px"
-                alt="Avatar" title="Profile picture to show customised image">
-            </div>
-
         
+
+           <!--Call Student Profile Data From Database-->
            <div class="card-body">
            @foreach($students as $student)
                <table>
@@ -56,7 +53,7 @@
                    </tr>
                    <tr>
                        <td>Phone Number:&emsp;</td>
-                       <td>{{$students->stud_hpNum}}</td>
+                       <td>{{$student->stud_hpNum}}</td>
                    </tr>
                    <tr>
                        <td>Email:&emsp;</td>
@@ -64,7 +61,7 @@
                    </tr>
                    <tr>
                        <td>Address:&emsp;</td>
-                       <td>{{$studen->stud_add}}</td>
+                       <td>{{$student->stud_add}}</td>
                    </tr>
                    <tr>
                        <td>Academic Advisor:&emsp;</td>
@@ -80,22 +77,28 @@
                <br>
           </div>
           
-
+           <!--Delete Profile -->
           <div class = "row-12">
-                <!--Button trigger modal-->
-                <!-- Button trigger modal -->
+               @csrf
+                @method('deletestud')
                 <div class = "col-12">
-                <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                   <td> <a href = "{{ route('deletestud', ['stud_id' => $student]) }}">
+                    Delete
+                  </a></td>
+               <!-- <button a href="{{ route('deletestud', ['stud_id' => $student]) }}" type="submit" name="deletestud" value="delete" class="btn btn-primary float-right" >
                     Delete Profile
-                    </button>
+                </button>-->
                </div>
-
-                    <!--Button trigger modal-->
-                    <!--Button trigger modal-->
+                 <!--Edit Profile-->
+                 @csrf
+                    @method('vieweditstud')
                 <div class = "col-10">
-                    <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <td> <a href = "{{route('vieweditstud' ,['stud_id'=> $student])}} ">
+                    Edit
+                  </a></td>
+                   <!-- <button a href= "/ProfileStudentEdit{{$student->stud_id}}" type="submit"  class="btn btn-primary float-right" onclick =""  data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Edit Profile
-                    </button>
+                    </button>-->
                 </div>
 
               @endforeach

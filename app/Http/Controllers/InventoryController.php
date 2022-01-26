@@ -17,6 +17,7 @@ class InventoryController extends Controller
 {
     public function create(Request $request)
     {
+        // Insert data into database
         //\App\Models\InventoryModel\_inventories::create($request->all());
         $data = new _inventories;
         $data->stud_matricID = $request->stud_matricID;
@@ -30,5 +31,4 @@ class InventoryController extends Controller
 
     }
 
-    
 }

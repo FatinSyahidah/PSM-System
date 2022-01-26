@@ -73,28 +73,63 @@ Route::view('/lecturer', 'lecturer');
 
 
 //Manage Profile
-Route::get('ProfileViewStudent', function() {
-    return view('Manage Profile/ProfileViewStudent');
-});
-
-
-Route::get('ProfileViewStudent', 'App\Http\Controllers\StudentController@viewstudent');
-Route::get('ProfileViewLecturer', function(){
-    return view('Manage Profile/ProfileViewLecturer');
-
-}); 
-
-Route::get('ProfileViewStudent', function(){
+//Student Profile
+//View Student Profile Route
+Route::get('/ProfileViewStudent', 'App\Http\Controllers\StudentController@viewstudent');
+Route::get('/ProfileViewStudent', function(){
     $students = \App\Models\ProfileModel\student::all();
     return view('Manage Profile/ProfileViewStudent',compact('students'));
 });
+//Delete Student Profile Route
+Route::get('ProfileViewStudent/{stud_id}', 'App\Http\Controllers\StudentController@deletestud')->name('deletestud');
+
+//Edit Student Profile Route
+Route::get('/ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@vieweditstud')->name('vieweditstud');
+Route::post('/ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@editstud');
+
+//Lecturer Profile
+//View Route
+//Delete Route
+//Edit Route
+
 
 //Manage SV
 Route::get('SVbooking', function() {
     return view('Manage Supervisor Hunting/SVbooking');
 });
+Route::get('viewSVbooking', function() {
+    return view('Manage Supervisor Hunting/viewSVbooking');
+});
+Route::get('studRequest', function() {
+    return view('Manage Supervisor Hunting/studRequest');
+});
+Route::get('studList', function() {
+    return view('Manage Supervisor Hunting/studList');
+});
+
 
 //Manage Logbook
+Route::get('Logbook', function () {
+    return view('Manage Logbook/Logbook');
+});
+Route::get('AddLogbook', function () {
+    return view('Manage Logbook/AddLogbook');
+});
+Route::get('EditLogbook', function () {
+    return view('Manage Logbook/EditLogbook');
+});
+Route::get('DeleteLogbook', function () {
+    return view('Manage Logbook/DeleteLogbook');
+});
+Route::get('ViewLogbook', function () {
+    return view('Manage Logbook/ViewLogbook');
+});
+Route::get('LogbookLecturer', function () {
+    return view('Manage Logbook/LogbookLecturer');
+});
+Route::get('ViewLogbookLect', function () {
+    return view('Manage Logbook/ViewLogbookLect');
+});
 
 //Manage Proposal
 //Lecturer
@@ -110,13 +145,13 @@ Route::get('/TotalReq', function () {
 
 //Student
 Route::get('StdMainPg', function () {
-    $student = \App\Models\ProposalModel\proposals::all();
-    return view('Manage Proposal/StdMainPg', compact('student'));
+    $proposal = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/StdMainPg', compact('proposal'));
 });
-Route::get('StdMainPg', function () {
+/*Route::get('StdMainPg', function () {
     $proposals = \App\Models\ProposalModel\proposals::all();
     return view('Manage Proposal/newReq', compact('proposals'));
-});
+});*/
 
 Route::view('form', 'Manage Proposal/newReq');
 Route::post('submit', 'ProposalController@save');
