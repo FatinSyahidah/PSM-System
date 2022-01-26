@@ -25,16 +25,38 @@ class StudentController extends Controller
     //Delete Student Profile
     public function deletestud($stud_id)
     {
-        $students = \App\Models\ProfileModel\student::delete($stud_id);
-        $students->delete($students);
-        return redirect ('ProfileViewStudent');
+        
+            DB::delete('delete from students where stud_id = ?',[$stud_id]);
+            echo "Record deleted successfully.<br/>";
+            echo '<a href = "/My Profile/ProfileViewStudent">Click Here</a> to go back.';
+
+       // $students = \App\Models\ProfileModel\student::find($stud_id);
+        //$students->Delete();
+        //return redirect ('ProfileViewStudent');
     }
     
     //Edit Student Profile
-    public function editstud($stud_id)
+
+    public function vieweditstud(){
+       $students = \App\Models\ProfileModel\student::with('student')->where('stud_id')->get();
+       return view('ProfileStudentEdit/{{stud_id}}',['students'=>$students]);
+    }
+
+    public function editstud(Request $request,$stud_id)
     {
         $students = \App\Models\ProfileModel\student::find($stud_id);
-          return view('ProfileStudentEdit');
+        $students->name = $request->name;
+        $students->stud_matricID = $request->stud_matricID;
+        $students->stud_course = $request->stud_course;
+        $students->stud_year = $request->stud_year;
+        $students->stud_hpNum = $request->stud_hpNum;
+        $students->email = $request->email;
+        $students->stud_add = $request->stud_add;
+        $students->stud_advisor = $request->stud_advisor;
+        $students->stud_psmTitle = $request->stud_psmTitle;
+
+        $students->save();//Save Student data
+        return redirect('ProfileViewStudent');//send back to view page
     }
         
 }

@@ -79,20 +79,26 @@
           
            <!--Delete Profile Button-->
           <div class = "row-12">
-                <!--Button trigger modal-->
-                <!-- Button trigger modal -->
+               @csrf
+                @method('deletestud')
                 <div class = "col-12">
-                <button a href="{{$student->stud_id}}/deletestud" type="button" class="btn btn-primary float-right" onclick="var result = confirm('Delete Profile?');">
+                   <td> <a href = "{{ route('deletestud', ['stud_id' => $student]) }}">
+                    Delete
+                  </a></td>
+               <!-- <button a href="{{ route('deletestud', ['stud_id' => $student]) }}" type="submit" name="deletestud" value="delete" class="btn btn-primary float-right" >
                     Delete Profile
-                </button>
+                </button>-->
                </div>
                  <!--Edit Profile Button-->
                     <!--Button trigger modal-->
                     <!--Button trigger modal-->
                 <div class = "col-10">
-                    <button a href= "/ProfileStudentEdit{{$student->stud_id}}" type="button"  class="btn btn-primary float-right" onclick =  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <td> <a href = "/ProfileStudentEdit{{$student->stud_id}}">
+                    Edit
+                  </a></td>
+                   <!-- <button a href= "/ProfileStudentEdit{{$student->stud_id}}" type="submit"  class="btn btn-primary float-right" onclick =""  data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Edit Profile
-                    </button>
+                    </button>-->
                 </div>
 
               @endforeach

@@ -32,8 +32,8 @@
         <div style ="margin-left:50px; margin-left: 1em; margin-top: 12px">
          <br>
          @foreach($students as $student)
-        <form action="/ProfileStudentEdit/{{$student->stud_id}}" method = "POST" class="form-group" style="width:70%; margin-left:15%" >
-        <input type ="hidden" name="_token" value="<?php echo csrf_token();?>">
+        <form action="/ProfileStudentEdit{{$student->stud_id}}" method = "post" class="form-group" style="width:70%; margin-left:15%" >
+       <input type ="hidden" name="_token" value="<?php echo csrf_token();?>">
         
             <table>
                 <tr>
@@ -74,7 +74,7 @@
                    </tr>
 
         </table>
-        </form>
+        
         </div>
         </div>
 
@@ -90,11 +90,11 @@
                     <!--Button trigger modal-->
                     <!--Button trigger modal-->
                 <div class = "col-10">
-                    <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="submit"  value = "Update" class="btn btn-primary float-right" >
                     Save Details
                     </button>
                 </div>
-
+        </form>
                @endforeach
 
             </div>
