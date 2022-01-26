@@ -29,7 +29,7 @@ class LogbookController extends Controller
         $data->discussion_details = $request->discussion_details;
         $data->action_plan = $request->action_plan;
         $data->save();
-        return redirect('RequestInventory')->with('success','Request Submitted');
+        return redirect('AddLogbook')->with('success','New Entry Submitted');
 
     }
 
