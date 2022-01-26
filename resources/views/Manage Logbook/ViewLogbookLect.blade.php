@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.LectMaster')
 
 @section('content')
 
@@ -43,7 +43,7 @@
                 <p><strong>ACTION PLAN </strong></p>
                 <br><br><br>
                 
-                <a href="Logbook" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <a href="LogbookLecturer" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                 <i class="fa-sm text-white-50"></i> Back</a>
                 
                 </div>
