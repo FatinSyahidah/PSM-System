@@ -77,11 +77,11 @@ Route::view('/lecturer', 'lecturer');
 //View Student Route
 Route::get('/ProfileViewStudent', 'App\Http\Controllers\StudentController@viewstudent');
 Route::get('/ProfileViewStudent', function(){
-    $students = \App\Models\ProfileModel\student::find('stud_id');
+    $students = \App\Models\ProfileModel\student::all();
     return view('Manage Profile/ProfileViewStudent',compact('students'));
 });
 //Delete Student Route
-Route::get('/ProfileViewStudent', 'App\Http\Controllers\StudentController@deletestud');
+Route::get('/ProfileViewStudent/{stud_id}', 'App\Http\Controllers\StudentController@deletestud');
 //Edit Student Route
 Route::get('/ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@editstud');
 

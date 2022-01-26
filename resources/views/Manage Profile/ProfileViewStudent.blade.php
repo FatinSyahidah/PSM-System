@@ -90,7 +90,7 @@
                     <!--Button trigger modal-->
                     <!--Button trigger modal-->
                 <div class = "col-10">
-                    <button a href= "Manage Profile/ProfileStudentEdit{{$student->stud_id}}/edit" type="button"  class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button a href= "/ProfileStudentEdit{{$student->stud_id}}" type="button"  class="btn btn-primary float-right" onclick =  data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Edit Profile
                     </button>
                 </div>
