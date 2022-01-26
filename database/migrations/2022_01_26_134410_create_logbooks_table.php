@@ -14,8 +14,14 @@ class CreateLogbooksTable extends Migration
     public function up()
     {
         Schema::create('logbooks', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('logbook_ID'); //
+            $table->string('name');
+            $table->date('meeting_time')->nullable();
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
+            $table->string('current_progress')->nullable();
+            $table->string('discussion_details');
+            $table->string('action_plan')->nullable();
         });
     }
 
