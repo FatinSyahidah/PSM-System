@@ -92,7 +92,7 @@ Route::post('/ProfileViewStudent/{stud_id}/updatestud', 'App\Http\Controllers\St
 //View Lecturer Profile Route
 Route::get('/ProfileViewLecturer', 'App\Http\Controllers\LecturerController@viewlecturer');
 Route::get('/ProfileViewLecturer', function(){
-    $students = \App\Models\ProfileModel\lecturer::all();
+    $lecturers = \App\Models\ProfileModel\lecturer::all();
     return view('Manage Profile/ProfileViewLecturer',compact('lecturers'));
 });
 
