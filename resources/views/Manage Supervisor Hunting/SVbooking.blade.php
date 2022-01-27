@@ -37,6 +37,8 @@
         <div style ="margin-left: 40px; margin-left: 8em;">
         <h3>Expertise</h3>
 
+<!-- Modal -->
+
 <form name="form1" id="form1" action="/action_page.php">
 <select name="expertise" id="expertise">
     <option value="" selected="selected">Select Expertise</option>
