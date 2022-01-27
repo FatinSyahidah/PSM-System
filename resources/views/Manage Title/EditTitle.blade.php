@@ -19,11 +19,11 @@
                             <h6 class="m-0 font-weight-bold text-primary">Project</h6>
                         </div>
                         <div class="card-body">
-                            <form class="form-horizontal">
+                            <form method="POST" action="TitleLIst">
                                 <div class="card-body">
                                     <div class="form-group row">
                                         <label
-                                            for="fname"
+                                            for="title_headline"
                                             class="col-sm-3 text-end control-label col-form-label"
                                             >Title</label
                                         >
@@ -31,7 +31,7 @@
                                             <input
                                             type="text"
                                             class="form-control"
-                                            id="fname"
+                                            id="title_headline"
                                             placeholder="Enter Title Here.."
                                             />
                                         </div>
@@ -40,19 +40,24 @@
                                         
                                     <div class="form-group row">
                                     <label
-                                        for="cono1"
+                                        for="title_detail"
                                         class="col-sm-3 text-end control-label col-form-label"
                                         >Details</label
                                     >
                                     <div class="col-sm-9">
-                                        <textarea class="form-control" placeholder="Enter Details Here.."></textarea>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="title_detail"
+                                            placeholder="Enter Details Here.."
+                                            />
                                     </div>
                                     </div>
                                 </div>
                                 <div class="border-top">
                                     <div class="card-body">
                                     
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" name="submit" class="btn btn-primary">
                                         Update
                                     </button>
 
