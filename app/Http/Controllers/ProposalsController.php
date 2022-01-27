@@ -24,7 +24,7 @@ class ProposalsController extends Controller
         $proposals->name = $req->name;
         echo $proposals->save();
     }
-    /*public function viewstudent()
+    public function viewstudent()
     {
         $students = DB::table('students')->select('stud_id','name')->get();
         return view('Manage Proposal.StdMainPg')->with('students',$student);
@@ -33,7 +33,8 @@ class ProposalsController extends Controller
     {
         $students = DB::table('proposals')->select('stud_id','name')->get();
         return view('Manage Proposal.newReq')->with('proposals',$proposals);
-    }*/
+    }
+    
     public function get()       //join table function
     {
         $proposal = DB::table('proposals')
@@ -48,5 +49,21 @@ class ProposalsController extends Controller
             echo "Record deleted successfully.<br/>";
     }
 
-    //
+    /*public function index()
+    {
+        $proposal = Proposals::all()->toArray();
+        return view('Manage Proposal.newReq', compact('proposal'));
+    }*/
+
+    public function index2()
+    {
+        $proposals = Proposals::all()->toArray();
+        return view('Manage Proposal.LectMainPg', compact('proposals'));
+    }
+
+    public function index3()
+    {
+        $new = Proposals::all()->toArray();
+        return view('Manage Proposal.newReq', compact('new'));
+    }
 }

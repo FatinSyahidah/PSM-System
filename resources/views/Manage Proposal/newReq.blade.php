@@ -24,17 +24,17 @@
         <div class = "container">
             
             <table class="table">
-            @foreach($request as $request)
+            @foreach($new as $new)
                 <thead>
                     <tr>Student Name</tr>
-                    <tr>{{$request->stud_name}}</tr>
+                    <tr>{{$new->stud_name}}</tr>
                 </thead>
                 <tbody>
                 
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>{{$request->date_submit}}</td>
+                    <td>{{$new->date_submit}}</td>
                 </tr>
                 </tbody>
             @endforeach

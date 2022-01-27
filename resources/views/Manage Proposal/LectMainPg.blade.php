@@ -44,17 +44,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($proposals as $proposals)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a type="button" href="/EditReq" class="btn btn-success float-center" 
+                            <td>{{$proposals->proposal_ID}}</td>
+                            <td>{{$proposals->name}}</td>
+                            <td>{{$proposals->stud_matricID}}</td>
+                            <td>{{$proposals->stud_psmTItle}}</td>
+                            <td>{{$proposals->stud_proposal}}</td>
+                            <td><a type="button" class="btn btn-success float-center" 
                             data-bs-toggle="modal" data-bs-target="#exampleModal">APPROVE</a></td>
-                            <td><a type="button" href="/form" class="btn btn-danger float-center" 
+                            <td><a type="button" class="btn btn-danger float-center" 
                             data-bs-toggle="modal" data-bs-target="#exampleModal">REJECT</a></td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

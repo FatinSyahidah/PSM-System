@@ -27,6 +27,12 @@
                     <h2 style="color:black">VIEW MY REQUEST</h2>         <!--Title page -->
                 </div> 
 
+                @if($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{$message}}</p>
+                </div>
+                @endif
+                
                 <div class="col-6">   <!--Button add new request -->
                     <a type="button" href="/form" class="btn btn-primary float-right" 
                     data-bs-toggle="modal" data-bs-target="#exampleModal">ADD REQUEST</a>
@@ -55,7 +61,6 @@
                     <td>{{$proposal->date_submit}}</td>
                     <td>{{$proposal->stud_advisor}}</td>
                     <td>{{$proposal->stud_psmTItle}}</td>      
-            @endforeach
                     <td><a type="button" href="/ViewStat" class="btn btn-success float-center" 
                     data-bs-toggle="modal" data-bs-target="#exampleModal">VIEW STATUS</a></td>
                     <td><a type="button" href="/EditReq" class="btn btn-warning float-center" 
@@ -65,6 +70,7 @@
                     <td><a type="button" href="{{ route('delete', ['proposal_ID' => $proposal]) }}" class="btn btn-danger float-center" 
                     data-bs-toggle="modal" data-bs-target="#exampleModal">DELETE</a></td>
                 </tr>
+                @endforeach
             </tbody>
                     
             </table>
