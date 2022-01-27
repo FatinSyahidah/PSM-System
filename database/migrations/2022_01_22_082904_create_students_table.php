@@ -28,8 +28,7 @@ class CreateStudentsTable extends Migration
             $table->string('stud_add')->nullable();
             $table->string('stud_advisor')->nullable();
             $table->string('stud_psmTitle')->nullable();
-            $table->string('stud_psmPhase')->nullable();
-            $table->string('stud_profilePic')->nullable();
+           
             $table->timestamps(); 
         });
     }
