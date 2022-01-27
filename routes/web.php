@@ -119,33 +119,36 @@ Route::get('StudentList', function() {
 
 
 //Manage logbook
-Route::resource('logbooks', LogbookController::class);
+//Route::resource('logbooks', LogbookController::class);
 
 
 
-/*//Manage Logbook
-Route::get('Logbook', function () {
-    return view('Manage Logbook/Logbook');
+//Manage Logbook
+Route::get('index', function () {
+    $logbooks = \App\Models\LogbookModel\logbooks::all();
+    return view('Manage Logbooks/index', compact('logbooks'));
 });
-Route::get('AddLogbook', function () {
-    return view('Manage Logbook/AddLogbook');
+Route::get('add', function () {
+    return view('Manage Logbooks/add');
 });
+
+Route::post('store','App\Http\Controllers\LogbookController@store');
 Route::get('EditLogbook', function () {
-    return view('Manage Logbook/EditLogbook');
+    return view('Manage Logbooks/EditLogbook');
 });
 Route::get('DeleteLogbook', function () {
-    return view('Manage Logbook/DeleteLogbook');
+    return view('Manage Logbooks/DeleteLogbook');
 });
 Route::get('ViewLogbook', function () {
-    return view('Manage Logbook/ViewLogbook');
+    return view('Manage Logbooks/ViewLogbook');
 });
 Route::get('LogbookLecturer', function () {
-    return view('Manage Logbook/LogbookLecturer');
+    return view('Manage Logbooks/LogbookLecturer');
 });
 Route::get('ViewLogbookLect', function () {
-    return view('Manage Logbook/ViewLogbookLect');
+    return view('Manage Logbooks/ViewLogbookLect');
 });
-*/
+
 
 //Manage Proposal
 //Lecturer

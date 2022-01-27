@@ -23,9 +23,9 @@ class LogbookController extends Controller
      */
     public function index()
     {
-        $logbooks = Logbook::latest()->paginate(5);
+        $logbooks = logbooks::latest()->paginate(5);
     
-        return view('logbooks.index',compact('logbooks'))
+        return view('index',compact('logbooks'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -38,7 +38,7 @@ class LogbookController extends Controller
      */
     public function add()
     {
-        return view('logbooks.add');
+        return view('Manage Logbooks.add');
     }
 
 
@@ -51,7 +51,7 @@ class LogbookController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        /*$request->validate([
             'stud_matricID' => 'required',
             'stud_name' => 'required',
             'meeting_date' => 'required',
@@ -60,10 +60,20 @@ class LogbookController extends Controller
             'current_progress' => 'required',
             'discussion_details' => 'required',
             'action_plan' => 'required',
-        ]);
+        ]);*/
     
-        Logbook::create($request->all());
-     
+        //$logbooks = new logbooks;
+        //\App\Models\LogbookModel\logbooks::create($request->all());
+        $data = new logbooks();
+        $data->stud_matricID = $request->stud_matricID;
+        $data->stud_name = $request->stud_name;
+        $data->meeting_date = $request->meeting_date;
+        $data->start_time = $request->start_time;
+        $data->end_time = $request->end_time;
+        $data->current_progress = $request->current_progress;
+        $data->discussion_details = $request->discussion_details;
+        $data->action_plan = $request->action_plan;
+        $data->save();
         return redirect()->route('logbooks.index')
                         ->with('success','New Logbook Entry Successfully Uploaded.');
     }
@@ -75,9 +85,10 @@ class LogbookController extends Controller
      * @param  \App\Logbook  $logbook
      * @return \Illuminate\Http\Response
      */
-    public function show(Logbook $logbook)
+    public function show($logbook_ID)
     {
-        return view('logbooks.show',compact('logbook'));
+        $logbook = logbooks::find($logbook_ID);
+        return view('Manage Logbooks.show',compact('logbook'));
     } 
 
 
@@ -115,7 +126,7 @@ class LogbookController extends Controller
     
         $logbook->update($request->all());
     
-        return redirect()->route('logbooks.index')
+        return redirect()->route('lManage Logbooks.index')
                         ->with('success','Logbook Entry updated successfully');
     }
 
