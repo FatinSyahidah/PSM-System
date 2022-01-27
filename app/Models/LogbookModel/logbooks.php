@@ -5,7 +5,7 @@ namespace App\Models\LogbookModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class logbooks extends Model
+class Logbooks extends Model
 {
     use HasFactory;
     protected $primaryKey = 'logbook_ID';

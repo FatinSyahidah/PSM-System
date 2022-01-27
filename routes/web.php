@@ -109,8 +109,8 @@ Route::get('studList', function() {
 });
 
 
-//manage logbook
-Route::resource('logbooks', ProductController::class);
+//Manage logbook
+Route::resource('logbooks', LogbookController::class);
 
 
 
