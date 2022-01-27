@@ -2,7 +2,7 @@
 
 @section('content')
 
-<!-- Page for lecturer to view the inventory request made by students -->
+<!-- Page for lecturer to view the supervisor request made by students -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,4 +23,9 @@
                 <!-- page title -->
                 <div class="col-6">
                     <h2 style="color:black">Student Request List</h2>
-                </div> 
+                </div>
+
+    </body>
+</html>
+
+@endsection 
