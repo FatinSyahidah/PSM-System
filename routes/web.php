@@ -85,14 +85,23 @@ Route::get('/ProfileViewStudent', function(){
 Route::get('ProfileViewStudent/{stud_id}', 'App\Http\Controllers\StudentController@deletestud')->name('deletestud');
 
 //Edit Student Profile Route
-Route::get('/ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@vieweditstud')->name('vieweditstud');
-Route::post('/ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@editstud');
+Route::get('/ProfileViewStudent/{stud_id}/ProfileStudentEdit', 'App\Http\Controllers\StudentController@vieweditstud');
+Route::post('/ProfileViewStudent/{stud_id}/updatestud', 'App\Http\Controllers\StudentController@updatestud');
 
 //Lecturer Profile
-//View Route
-//Delete Route
-//Edit Route
+//View Lecturer Profile Route
+Route::get('/ProfileViewLecturer', 'App\Http\Controllers\LecturerController@viewlecturer');
+Route::get('/ProfileViewLecturer', function(){
+    $students = \App\Models\ProfileModel\lecturer::all();
+    return view('Manage Profile/ProfileViewLecturer',compact('lecturers'));
+});
 
+//Delete Lecturer Profile Route
+Route::get('ProfileViewLecturer/{lect_id}', 'App\Http\Controllers\LecturerController@deletelect')->name('deletelect');
+
+//Edit  Lecturer Profile Route
+Route::get('/ProfileViewLecturer/{lect_id}/ProfileLecturerEdit', 'App\Http\Controllers\LecturerController@vieweditlect');
+Route::post('/ProfileViewLecturer/{lect_id}/updatelect', 'App\Http\Controllers\LecturerController@updatelect');
 
 //Manage SV
 Route::get('SVbooking', function() {
@@ -141,7 +150,8 @@ Route::get('ViewLogbookLect', function () {
 //Manage Proposal
 //Lecturer
 Route::get('LectMainPg', function () {
-    return view('Manage Proposal/LectMainPg');
+    $proposal = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/LectMainPg', compact('list'));
 });
 
 //Student
@@ -149,7 +159,11 @@ Route::get('StdMainPg', function () {
     $proposal = \App\Models\ProposalModel\proposals::all();
     return view('Manage Proposal/StdMainPg', compact('proposal'));
 });
-Route::get('StdMainPg/{proposal_ID}', 'App\Http\Controllers\ProposalsController@delete')->name('delete');
+Route::get('newReq', function () {
+    $proposal = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/newReq', compact('request'));
+});
+Route::get('StdMainPg\{proposal_ID}', 'App\Http\Controllers\ProposalsController@delete')->name('delete');
 Route::view('form', 'Manage Proposal/newReq');
 Route::post('submit', 'ProposalController@save');
 

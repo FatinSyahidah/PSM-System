@@ -29,87 +29,73 @@
                     <h2 style="color:black">My Profile</h2>
                 </div>
         </div> 
-        <div style ="margin-left:40px; margin-left: 2em;">
-            <img src="prof pic.jpg"  style="height:106px;width:106px"
-                alt="Avatar" title="Profile picture to show customised image">
-            </div>
-
         
-           <div style ="margin-left: 50px; margin-left: 12em;">
+         <!--Call Lecturer Profile Data From Database-->
+         <div class="card-body">
+           @foreach($lecturers as $lecturer)
                <table>
                    <tr>
                        <td>Name:&emsp;</td>
-                       <td><></td>
+                       <td>{{$lecturer->name}}</td>
                    </tr>
                    <tr>
                        <td>Staff ID:&emsp;</td>
-                       <td><></td>
+                       <td>{{$lecturer->lect_staffID}}</td>
                    </tr>
                    <tr>
                        <td>Field:&emsp;</td>
-                       <td><></td>
+                       <td>{{$lecturer->lect_field}}</td>
                    </tr>
                    <tr>
                        <td>Office Number:&emsp;</td>
-                       <td><></td>
+                       <td>{{$lecturer->lect_officeNum}}</td>
                    </tr>
                    <tr>
                        <td>Phone Number:&emsp;</td>
-                       <td><></td>
+                       <td>{{$lecturer->lect_hpNum}}</td>
                    </tr>
                    <tr>
                        <td>Email:&emsp;</td>
-                       <td><></td>
+                       <td>{{$lecturer->email}}</td>
                    </tr>
                    <tr>
                        <td>Address:&emsp;</td>
-                       <td><></td>
+                       <td>{{$lecturer->lect_add}}</td>
                    </tr>
                    <tr>
                        <td>Expertise:&emsp;</td>
-                       <td><></td>
+                       <td>{{$lecturer->lect_expertise}}</td>
                    </tr>
-                   
+                
                </table>
+               <br>
+               <br>
           </div>
-
+          
+           <!--Delete Profile -->
           <div class = "row-12">
-                <!--Button trigger modal-->
-                <!-- Button trigger modal -->
+               @csrf
+                @method('deletelect')
                 <div class = "col-12">
-                <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Delete Profile
-                    </button>
+                   <td> <a href = "{{ route('deletelect', ['lect_id' => $lecturer]) }}">
+                    Delete
+                  </a></td>
+               
                </div>
-
-                    <!--Button trigger modal-->
-                    <!--Button trigger modal-->
+                 <!--Edit Profile-->
+                 @csrf
+                    @method('vieweditlect')
                 <div class = "col-10">
-                    <button type="button" onclick ="location.href=ProfileLecturerEdit.blade.php" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Edit Profile
-                    </button>
+                <td> <a href = "/ProfileViewLecturer/{{$lecturer->lect_id}}/ProfileLectEdit ">
+                    Edit
+                  </a></td>
+                   
                 </div>
 
-
+              @endforeach
 
             </div>
 
-               
-                   
-                       
-
-                   
-
-
-
-        </div>
-     </div>
-             
-           
-    </div>
-        
-
-    
 
     </body>
 </html>

@@ -93,7 +93,7 @@
                  @csrf
                     @method('vieweditstud')
                 <div class = "col-10">
-                <td> <a href = "{{route('vieweditstud' ,['stud_id'=> $student])}} ">
+                <td> <a href = "/ProfileViewStudent/{{$student->stud_id}}/ProfileStudentEdit ">
                     Edit
                   </a></td>
                    <!-- <button a href= "/ProfileStudentEdit{{$student->stud_id}}" type="submit"  class="btn btn-primary float-right" onclick =""  data-bs-toggle="modal" data-bs-target="#exampleModal">
