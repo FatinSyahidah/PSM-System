@@ -46,7 +46,124 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   
+                                @foreach($data as $student)
+                                    <tr>
+                                        <td>{{$student->inv_ID}}</td>
+                                        <td>{{$student->stud_matricID}}</td>
+                                        <td>{{$student->inv_name}}</td>
+                                        <td>{{$student->quantity}}</td>
+                                        <td>{{$student->req_status}}</td>
+                                        <td>
+                                            <a href="{{$student->inv_ID}}/updateRequest" class="btn btn-success btn-sm text-white edit" data-bs-toggle="modal" data-bs-target="#editModal"><span class="icon text-white-50">
+                                            <i class="fas fa-edit text-white-50"></i>
+                                                </span>EDIT</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+                <!--Start edit modal-->
+                <!-- modal to edit the request status -->
+                <div class="modal fade" id="editModal" tabindex="-1" style="color:black" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Update Status</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                            </div>
+
+                            <!-- form action after clicking update button, go to controller for process -->
+                            <form action="{{$student->inv_ID}}/updateRequest" method="POST" id="editForm">
+                            {{csrf_field()}}
+                    
+                            <div class="modal-body">
+                                <div class="form-group row">
+                                    <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Matric ID</label> <!--Data matrid id-->
+                                    <div class="col-sm-9">
+                                    <input name="stud_matricID" id="stud_matricID" type="text"  class="form-control" value="{{$student->stud_matricID}}" disabled >
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Inventory Name</label> <!--Inventory name data-->
+                                    <div class="col-sm-9">
+                                    <input name="inv_name" id="inv_name" type="text" class="form-control" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Quantity</label>    <!--Quantity data-->
+                                    <div class="col-sm-9">
+                                    <input name="quantity" id="quantity" type="text" class="form-control" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Edit Status</label>  <!--Update status-->
+                                    <div class="col-sm-9">
+                                    <select name="req_status" id="req_status" class="form-control" aria-label="Status" required>
+                                        <option selected>Status</option>
+                                        <option value="APPROVE">APPROVE</option>
+                                        <option value="REJECT">REJECT</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">UPDATE</button>                 <!--update button -->
+                                </form>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- script source used in this page -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js"></script>
+
+        <!--data table script -->
+        <script>
+            $(document).ready(function($) {
+        
+        var table = $('#example').DataTable();
+
+        //start edit record
+            table.on('click','.edit', function() {
+
+                $tr = $(this).closest('tr');
+                if ($($tr).hasClass('child')){
+                    $tr = $tr.prev('.parent');
+                }
+
+                var data = table.row($tr).data();
+                console.log(data);
+                //data value based on column name
+                $('#stud_matricID').val(data[1]);
+                $('#inv_name').val(data[2]);
+                $('#quantity').val(data[3]);
+                $('#req_status').val(data[4]);
+
+                $('#editForm').attr('action', '{{$student->inv_ID}}/updateRequest');   //update based on id
+                $('#editModal').modal('show');              //show modal form
+            });
+        });    
+        </script>
+        
+        </div>  
     </body>
 </html>
 

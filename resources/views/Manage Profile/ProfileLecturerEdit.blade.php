@@ -30,85 +30,71 @@
                 </div>
         </div>
         <div style ="margin-left:50px; margin-left: 1em; margin-top: 12px">
-         <table>
-                <tr>
-                    <td>Profile Image:&emsp;&emsp;</td>
-                </tr>
-                  <tr>
-                    <td><img src=" " width="150px" height="200px" border="1px solid black" style="margin-top: 2px;"></td>
-                    <td colspan="5" style="text-align: right"><button type="submit" name="update" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Upload Photo</button></td>
-                  </tr>
-        </table>
-        
+         <br>
+
+          <!--Edit Lecturer Profile--> 
+        <form action="/ProfileLecturerView/{{$lecturers->lect_id}}/updatelect" method="POST">
+            {{csrf_field()}}
+            <div class="mb-3">
+            <label for ="exampleFormControlInput1" class="form-label">Name:</label>
+            <input type="text" class = "form-control" name="name" id="exampleFormControlInput1" value="{{$lecturers->name}}"></div>
+            
+            <div class="mb-3">
+            <label for ="exampleFormControlInput2" class="form-label">Staff ID:</label>
+            <input type="text" class="form-control" name="lect_staffID " id="exampleFormInput2" value="{{$lecturers->lect_staffID}}"></div>
+            
+            <div class="mb-3">
+            <label for ="exampleFormControlInput3" class="form-label">Field:</label>
+            <input type="text" name="lect_field" id="exampleFormInput3" value="{{$lecturer->lect_field}}" ></div>
+            
+            <div class="mb-3">
+            <label for ="exampleFormControlInput4" class="form-label">Office Number:</label>
+            <td><input type="text" name="lect_officeNum" id="exampleFormInput4" value="{{$lecturer->lect_officeNum}}"></div>
+           
+            <div class="mb-3">
+            <label for ="exampleFormControlInput5" class="form-label">Phone Number:</label>
+            <input type="text" name="lect_hpNum" id="exampleFormInput5" value="{{$lecturer->lect_hpNum}}"></div>
+            
+            <div class="mb-3">
+            <label for ="exampleFormControlInput6" class="form-label">Email:</label>
+            <input type="text" name="email" id="exampleFormInput6" value="{{$lecturers->email}}"></div>
+            
+            <div class="mb-3">
+            <label for ="exampleFormControlInput7" class="form-label">Address:</label>
+            <input type="text" name="lect_add" id="exampleFormInput7" value="{{$lecturer->lect_add}}"></div>
+            
+            <div class="mb-3">
+            <label for ="exampleFormControlInput8" class="form-label">Expertise:</label>
+            <input type="text" name="lect_expertise" id="exampleFormInput8" value="{{$lecturer->lect_expertise}}"></div>
+         
 
         
-        <div style ="margin-left: 50px; margin-left: 12em;">
-            <table>
-                <tr>
-                    <td>Name:&emsp;</td>
-                    <td><input type="text" name=" " value=" " required></td>
-                </tr>
-                <tr>
-                       <td>Staff ID:</td>
-                       <td><input type="text" name=" " value=" " required></td>
-                   </tr>
-                   <tr>
-                       <td>Field:&emsp;</td>
-                       <td><input type="text" name=" " value=" " required></td>
-                   </tr>
-                   <tr>
-                       <td>Office Number:</td>
-                       <td><input type="text" name=" " value=" " required></td>
-                   </tr>
-                   <tr>
-                       <td>Phone Number:&emsp;&emsp;</td>
-                       <td><input type="text" name=" " value=" " required></td>
-                   </tr>
-                   <tr>
-                       <td>Email:&emsp;</td>
-                       <td><input type="text" name=" " value=" " required></td>
-                   </tr>
-                   <tr>
-                       <td>Address:&emsp;</td>
-                       <td><input type="text" name=" " value=" " required></td>
-                   </tr>
-                   <tr>
-                       <td>Expertise:&emsp;</td>
-                       <td>
-                        <input type="hidden" name=" " value=" ">
-                        <select id=" " name=" ">
-                            <option value="" selected></option>
-                            <option value=" ">IoT</option>
-                            <option value=" ">Artificial Intelligence</option>
-                            <option value=" ">Graphic & Multimedia</option>
-                            <option value=" ">Cyber Security</option>
-                        </select>
-                    </td>
-                    <td><div style="color: red">&emsp;*Refill</div></td>
-                   </tr>
-
-        </table>
-
+        
         </div>
         </div>
 
         <div class = "row-12">
-                <!--Button trigger modal-->
-                <!-- Button trigger modal -->
+                <!-- Button to Cancel Edit -->
                 <div class = "col-12">
                 <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Cancel Edit
                     </button>
                </div>
 
-                    <!--Button trigger modal-->
-                    <!--Button trigger modal-->
+                    
+                    <!--Button Save Edited Lecturer Profile Details-->
                 <div class = "col-10">
-                    <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="submit"  value = "Update" class="btn btn-primary float-right" >
                     Save Details
                     </button>
                 </div>
+        </form>
+               
 
+        
+
+        
+        
 
 
             </div>

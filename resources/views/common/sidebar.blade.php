@@ -54,7 +54,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="#">Book Supervisor</a>
+                        <a class="collapse-item" href="SVbooking">Book Supervisor</a>
+                        <a class="collapse-item" href="SVbookingStatus">Supervisor Status</a>
                         
                     </div>
                 </div>
@@ -102,7 +103,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="Logbook">Logbook</a>
+                        <a class="collapse-item" href="index">Logbook</a>
                         
                     </div>
                 </div>

@@ -16,8 +16,7 @@ use App\Http\Controllers\Controller;
 
 class ProposalsController extends Controller
 {
-    //
-    function save(Request $req)
+    function save(Request $req)     //save new request function
     {
         //print_r($req->input());
         $proposals = new Proposals;
@@ -25,15 +24,7 @@ class ProposalsController extends Controller
         $proposals->name = $req->name;
         echo $proposals->save();
     }
-    public function newReq()
-    {
-        $student = Student::with('proposals')->get();
-        $proposals = Proposals::with('student')->get();
-
-        return view('Manage Proposal.newReq', compact('student, proposals'));
-    }
-
-    public function viewstudent()
+    /*public function viewstudent()
     {
         $students = DB::table('students')->select('stud_id','name')->get();
         return view('Manage Proposal.StdMainPg')->with('students',$student);
@@ -42,12 +33,20 @@ class ProposalsController extends Controller
     {
         $students = DB::table('proposals')->select('stud_id','name')->get();
         return view('Manage Proposal.newReq')->with('proposals',$proposals);
-    }
-    public function get()
+    }*/
+    public function get()       //join table function
     {
         $proposal = DB::table('proposals')
                     ->join('student', 'student.stud_id', 'stud_id')
                     ->select('proposals.*', 'student.stud_advisor', 'student.name')
                     ->get();
     }
+
+    public function delete($proposal_ID)
+    {
+            DB::delete('delete from students where proposal_ID = ?',[$proposal_ID]);
+            echo "Record deleted successfully.<br/>";
+    }
+
+    //
 }
