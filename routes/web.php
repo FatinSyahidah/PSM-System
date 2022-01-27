@@ -118,8 +118,8 @@ Route::get('studList', function() {
 });
 
 
-//manage logbook
-Route::resource('logbooks', ProductController::class);
+//Manage logbook
+Route::resource('logbooks', LogbookController::class);
 
 
 
@@ -150,7 +150,8 @@ Route::get('ViewLogbookLect', function () {
 //Manage Proposal
 //Lecturer
 Route::get('LectMainPg', function () {
-    return view('Manage Proposal/LectMainPg');
+    $proposal = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/LectMainPg', compact('list'));
 });
 
 //Student
@@ -158,7 +159,11 @@ Route::get('StdMainPg', function () {
     $proposal = \App\Models\ProposalModel\proposals::all();
     return view('Manage Proposal/StdMainPg', compact('proposal'));
 });
-Route::get('StdMainPg/{proposal_ID}', 'App\Http\Controllers\ProposalsController@delete')->name('delete');
+Route::get('newReq', function () {
+    $proposal = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/newReq', compact('request'));
+});
+Route::get('StdMainPg\{proposal_ID}', 'App\Http\Controllers\ProposalsController@delete')->name('delete');
 Route::view('form', 'Manage Proposal/newReq');
 Route::post('submit', 'ProposalController@save');
 

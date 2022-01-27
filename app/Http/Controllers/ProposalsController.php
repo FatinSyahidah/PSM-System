@@ -16,7 +16,6 @@ use App\Http\Controllers\Controller;
 
 class ProposalsController extends Controller
 {
-    //
     function save(Request $req)     //save new request function
     {
         //print_r($req->input());
@@ -25,14 +24,6 @@ class ProposalsController extends Controller
         $proposals->name = $req->name;
         echo $proposals->save();
     }
-    /*public function newReq()
-    {
-        $student = Student::with('proposals')->get();
-        $proposals = Proposals::with('student')->get();
-
-        return view('Manage Proposal.newReq', compact('student, proposals'));
-    }*/
-
     /*public function viewstudent()
     {
         $students = DB::table('students')->select('stud_id','name')->get();
@@ -53,8 +44,9 @@ class ProposalsController extends Controller
 
     public function delete($proposal_ID)
     {
-        
             DB::delete('delete from students where proposal_ID = ?',[$proposal_ID]);
             echo "Record deleted successfully.<br/>";
     }
+
+    //
 }

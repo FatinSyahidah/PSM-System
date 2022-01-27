@@ -24,20 +24,20 @@
         <div class = "container">
             
             <table class="table">
-            @foreach($proposal as $proposal)
+            @foreach($request as $request)
                 <thead>
                     <tr>Student Name</tr>
-                    <tr>{{$proposal->stud_name}}</tr>
+                    <tr>{{$request->stud_name}}</tr>
                 </thead>
                 <tbody>
                 
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>{{$proposal->date_submit}}</td>
+                    <td>{{$request->date_submit}}</td>
                 </tr>
-                @endforeach
                 </tbody>
+            @endforeach
             </table>
 
 
