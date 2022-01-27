@@ -62,7 +62,7 @@
                                 <!--Fetch data from database -->
                                 @foreach($logbooks as $logbook)
                                 <tr>
-                                    <td>{{ ++$i }}</td>
+                                    <td>{{$logbook->logbook_ID}}</td>
                                     <td>{{$logbook->stud_matricID}}</td>
                                     <td>{{$logbook->stud_name}}</td>
                                     <td>{{$logbook->meeting_date}}</td>
