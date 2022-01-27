@@ -48,14 +48,14 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="true" aria-controls="collapseThree">
                     <i class="fas fa-briefcase"></i>
-                    <span>Supervisor</span>
+                    <span>Student</span>
                 </a>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="#">Book Supervisor</a>
-                        
+                        <a class="collapse-item" href="StudentRequestList">Student Request List</a>
+                        <a class="collapse-item" href="StudentList">Student List</a>
                     </div>
                 </div>
             </li>
@@ -103,7 +103,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="LogbookLecturer">Logbook</a>
+                        <a class="collapse-item" href="LectIndex">Logbook</a>
                         
                     </div>
                 </div>
