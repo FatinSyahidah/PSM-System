@@ -23,7 +23,6 @@ class CreateLecturersTable extends Migration
             $table->string('email');
             $table->string('lect_add')->nullable();
             $table->string('lect_expertise')->nullable();
-            $table->string('lect_profilePic')->nullable();
             $table->string('password');
             $table->boolean('is_teacher')->default(false);
             $table->rememberToken();
