@@ -29,3 +29,31 @@ class SupervisorController extends Controller
         $data = DB::table('BookSV')->select('sv_id')->get();
         return view('Manage Supervisor.SVbookingStaus')->with('data',$data);
     }
+
+    //Lecturer accept the student request
+    public function acceptStudRequest()
+    {
+        $data = DB::table('StudReq')->select('sr_id')->get();
+        return view('Manage Supervisor.StudentRequestList')->with('data',$data);
+    }
+
+    //Lecturer reject the student request
+    public function rejectStudRequest()
+    {
+        $data = DB::table('StudReq')->select('sr_id')->get();
+        return view('Manage Supervisor.StudentRequestList')->with('data',$data);
+    }
+
+    //Lecturer accept the student request
+    public function acceptStudRequest()
+    {
+        $data = DB::table('StudReq')->select('sr_id')->get();
+        return view('Manage Supervisor.StudentRequestList')->with('data',$data);
+    }
+
+    //Lecturer view the student list
+    public function viewStudList()
+    {
+        $data = DB::table('StudReq')->select('sr_id')->get();
+        return view('Manage Supervisor.StudentList')->with('data',$data);
+    }
