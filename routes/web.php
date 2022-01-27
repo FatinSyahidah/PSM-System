@@ -163,6 +163,14 @@ Route::get('newReq', function () {
     $new = \App\Models\ProposalModel\proposals::all();
     return view('Manage Proposal/newReq', compact('new'));
 });
+Route::get('ViewStat', function () {
+    $new1 = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/ViewStat', compact('new1'));
+});
+Route::get('ViewStat', function () {
+    $new2 = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/ViewStat', compact('new2'));
+});
 Route::get('StdMainPg\{proposal_ID}', 'App\Http\Controllers\ProposalsController@delete')->name('delete');
 Route::view('form', 'Manage Proposal/newReq');
 Route::post('submit', 'ProposalController@save');
