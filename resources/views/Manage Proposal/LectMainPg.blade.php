@@ -24,7 +24,7 @@
 
             <div class = "row">          <!--Header -->
                 <div class="col-6">
-                    <h2 style="color:black">List of Request</h2>
+                    <h2 style="color:black">LIST OF REQUEST</h2>
                 </div> 
             </div>
 

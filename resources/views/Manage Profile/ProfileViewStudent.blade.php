@@ -77,7 +77,7 @@
                <br>
           </div>
           
-           <!--Delete Profile Button-->
+           <!--Delete Profile -->
           <div class = "row-12">
                @csrf
                 @method('deletestud')
@@ -89,11 +89,11 @@
                     Delete Profile
                 </button>-->
                </div>
-                 <!--Edit Profile Button-->
-                    <!--Button trigger modal-->
-                    <!--Button trigger modal-->
+                 <!--Edit Profile-->
+                 @csrf
+                    @method('vieweditstud')
                 <div class = "col-10">
-                <td> <a href = "/ProfileStudentEdit{{$student->stud_id}}">
+                <td> <a href = "/ProfileViewStudent/{{$student->stud_id}}/ProfileStudentEdit ">
                     Edit
                   </a></td>
                    <!-- <button a href= "/ProfileStudentEdit{{$student->stud_id}}" type="submit"  class="btn btn-primary float-right" onclick =""  data-bs-toggle="modal" data-bs-target="#exampleModal">

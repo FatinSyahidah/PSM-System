@@ -54,15 +54,17 @@
                     <td>{{$proposal->proposal_ID}}</td>
                     <td>{{$proposal->date_submit}}</td>
                     <td>{{$proposal->stud_advisor}}</td>
-                    <td>{{$proposal->stud_psmTItle}}</td>
-                    <td><a type="button" href="/EditReq" class="btn btn-success float-center" 
+                    <td>{{$proposal->stud_psmTItle}}</td>      
+            @endforeach
+                    <td><a type="button" href="/ViewStat" class="btn btn-success float-center" 
                     data-bs-toggle="modal" data-bs-target="#exampleModal">VIEW STATUS</a></td>
                     <td><a type="button" href="/EditReq" class="btn btn-warning float-center" 
                     data-bs-toggle="modal" data-bs-target="#exampleModal">EDIT</a></td>
-                    <td><a type="button" href="/form" class="btn btn-danger float-center" 
+                    @csrf
+                    @method('delete') 
+                    <td><a type="button" href="{{ route('delete', ['proposal_ID' => $proposal]) }}" class="btn btn-danger float-center" 
                     data-bs-toggle="modal" data-bs-target="#exampleModal">DELETE</a></td>
                 </tr>
-            @endforeach
             </tbody>
                     
             </table>

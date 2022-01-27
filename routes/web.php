@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\ProposalController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\LogbookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,14 +85,23 @@ Route::get('/ProfileViewStudent', function(){
 Route::get('ProfileViewStudent/{stud_id}', 'App\Http\Controllers\StudentController@deletestud')->name('deletestud');
 
 //Edit Student Profile Route
-Route::get('ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@vieweditstud');
-Route::post('ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@editstud');
+Route::get('/ProfileViewStudent/{stud_id}/ProfileStudentEdit', 'App\Http\Controllers\StudentController@vieweditstud');
+Route::post('/ProfileViewStudent/{stud_id}/updatestud', 'App\Http\Controllers\StudentController@updatestud');
 
 //Lecturer Profile
-//View Route
-//Delete Route
-//Edit Route
+//View Lecturer Profile Route
+Route::get('/ProfileViewLecturer', 'App\Http\Controllers\LecturerController@viewlecturer');
+Route::get('/ProfileViewLecturer', function(){
+    $students = \App\Models\ProfileModel\lecturer::all();
+    return view('Manage Profile/ProfileViewLecturer',compact('lecturers'));
+});
 
+//Delete Lecturer Profile Route
+Route::get('ProfileViewLecturer/{lect_id}', 'App\Http\Controllers\LecturerController@deletelect')->name('deletelect');
+
+//Edit  Lecturer Profile Route
+Route::get('/ProfileViewLecturer/{lect_id}/ProfileLecturerEdit', 'App\Http\Controllers\LecturerController@vieweditlect');
+Route::post('/ProfileViewLecturer/{lect_id}/updatelect', 'App\Http\Controllers\LecturerController@updatelect');
 
 //Manage SV
 Route::get('SVbooking', function() {
@@ -108,7 +118,12 @@ Route::get('studList', function() {
 });
 
 
-//Manage Logbook
+//Manage logbook
+Route::resource('logbooks', LogbookController::class);
+
+
+
+/*//Manage Logbook
 Route::get('Logbook', function () {
     return view('Manage Logbook/Logbook');
 });
@@ -130,17 +145,13 @@ Route::get('LogbookLecturer', function () {
 Route::get('ViewLogbookLect', function () {
     return view('Manage Logbook/ViewLogbookLect');
 });
+*/
 
 //Manage Proposal
 //Lecturer
 Route::get('LectMainPg', function () {
-    return view('Manage Proposal/LectMainPg');
-});
-Route::get('/ListNewReq', function () {
-    return view('Manage Proposal/ListNewReq');
-});
-Route::get('/TotalReq', function () {
-    return view('Manage Proposal/TotalReq');
+    $proposal = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/LectMainPg', compact('list'));
 });
 
 //Student
@@ -148,13 +159,15 @@ Route::get('StdMainPg', function () {
     $proposal = \App\Models\ProposalModel\proposals::all();
     return view('Manage Proposal/StdMainPg', compact('proposal'));
 });
-/*Route::get('StdMainPg', function () {
-    $proposals = \App\Models\ProposalModel\proposals::all();
-    return view('Manage Proposal/newReq', compact('proposals'));
-});*/
-
+Route::get('newReq', function () {
+    $proposal = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/newReq', compact('request'));
+});
+Route::get('StdMainPg\{proposal_ID}', 'App\Http\Controllers\ProposalsController@delete')->name('delete');
 Route::view('form', 'Manage Proposal/newReq');
 Route::post('submit', 'ProposalController@save');
+
+
 
 //Manage Title
 Route::get('StatusTitle', function () {   //Student
@@ -184,6 +197,8 @@ Route::get('ViewTitle', function () {
 Route::get('TitleList', function () {
     return view('Manage Title/TitleList');
 });
+
+
 
 //Manage Inventory Usage
 //student 
