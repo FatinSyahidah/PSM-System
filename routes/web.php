@@ -201,12 +201,43 @@ Route::get('TitleList', function () {
 
 
 //Manage Inventory Usage
+//student 
 Route::get('RequestInventory', function () {
-    return view('Manage Inventory Usage/RequestInventory');
+    return view('Manage Inventory Usage/RequestInventory');     //return view interface to student request inventory page
 });
 
 Route::get('RequestStatus', function () {
-    return view('Manage Inventory Usage/RequestStatus');
+    return view('Manage Inventory Usage/RequestStatus');        //return view interface to student request status page
 });
 
-Route::post('create','App\Http\Controllers\InventoryController@create');
+Route::post('create','App\Http\Controllers\InventoryController@create');    //from interface to controller to insert data to interface
+
+Route::get('RequestStatus', function () {
+    $data = \App\Models\InventoryModel\_inventories::all();                 //return data from database to request status student interface
+    return view('Manage Inventory Usage/RequestStatus',compact('data'));
+});
+
+// Lecturer
+Route::get('StudentRequestStatus', function () {
+    $data = \App\Models\InventoryModel\_inventories::all();                                     //return data from database to request status lecturer interface
+    return view('Manage Inventory Usage/StudentRequestStatus',compact('data'));
+});
+
+Route::post('{inv_ID}/updateRequest','App\Http\Controllers\InventoryController@updateRequest');  //update student request status based on id
+
+Route::get('PickUpItem', function(){
+    $data = DB::select('select inv_ID, stud_matricID, stud_name, inv_name, quantity, req_status     
+    from _inventories
+    where req_status = "APPROVE"');
+    return view('Manage Inventory Usage/PickUpItem', compact('data'));                              //return data from database in pick up item page where request status = APPROVE
+});
+
+Route::post('{inv_ID}/add','App\Http\Controllers\InventoryController@add');                         //Lecturer insert pick up item data to database 
+
+//Technician
+Route::get('InventoryDetails', function () {
+    $data = \App\Models\InventoryModel\_inv_details::all();
+    return view('Manage Inventory Usage/InventoryDetails',compact('data'));                         // return pick up item data from database in page inevntory details
+});
+
+Route::post('{inv_ID}/updateDetail','App\Http\Controllers\InventoryController@updateDetail');       //technician update pick up item details
