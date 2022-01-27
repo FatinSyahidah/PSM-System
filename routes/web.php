@@ -107,13 +107,13 @@ Route::post('/ProfileViewLecturer/{lect_id}/updatelect', 'App\Http\Controllers\L
 Route::get('SVbooking', function() {
     return view('Manage Supervisor Hunting/SVbooking');
 });
-Route::get('viewSVbooking', function() {
+Route::get('SVbookingStatus', function() {
     return view('Manage Supervisor Hunting/viewSVbooking');
 });
-Route::get('studRequest', function() {
+Route::get('StudentRequestList', function() {
     return view('Manage Supervisor Hunting/studRequest');
 });
-Route::get('studList', function() {
+Route::get('StudentList', function() {
     return view('Manage Supervisor Hunting/studList');
 });
 
