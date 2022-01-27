@@ -41,7 +41,7 @@
             <div class="card shadow mb-4">
                 
                 <div class="card-body">
-                <a href="AddLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
+                <a href="add" class="d-none d-sm-inline-block fa-sm text-white-50">
                 <button type="button" class="butangUpdate btn btn-sm btn-primary">Add New Entry </button> </a><br><br><br>
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -87,7 +87,7 @@
 
                             </tbody>
                         </table>
-                        {!! $logbooks->links() !!}
+                        
                     </div>
                 </div>
             </div>

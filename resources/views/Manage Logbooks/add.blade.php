@@ -46,7 +46,7 @@
                 <div class="card-body">
                     
                 
-                <form action="{{ route('logbooks.store') }}" method="POST">
+                <form action="store" method="POST">
                     @csrf
                 
                     <div class="row">
