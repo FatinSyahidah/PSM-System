@@ -21,8 +21,4 @@ class proposals extends Model
         'date_submit',
     ];
 
-    /*public function student()
-    {
-        return $this->belongsTo(student::class);
-    }*/
 }
