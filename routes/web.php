@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\ProposalController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\LogbookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,14 +85,23 @@ Route::get('/ProfileViewStudent', function(){
 Route::get('ProfileViewStudent/{stud_id}', 'App\Http\Controllers\StudentController@deletestud')->name('deletestud');
 
 //Edit Student Profile Route
-Route::get('/ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@vieweditstud')->name('vieweditstud');
-Route::post('/ProfileStudentEdit/{stud_id}', 'App\Http\Controllers\StudentController@editstud');
+Route::get('/ProfileViewStudent/{stud_id}/ProfileStudentEdit', 'App\Http\Controllers\StudentController@vieweditstud');
+Route::post('/ProfileViewStudent/{stud_id}/updatestud', 'App\Http\Controllers\StudentController@updatestud');
 
 //Lecturer Profile
-//View Route
-//Delete Route
-//Edit Route
+//View Lecturer Profile Route
+Route::get('/ProfileViewLecturer', 'App\Http\Controllers\LecturerController@viewlecturer');
+Route::get('/ProfileViewLecturer', function(){
+    $students = \App\Models\ProfileModel\lecturer::all();
+    return view('Manage Profile/ProfileViewLecturer',compact('lecturers'));
+});
 
+//Delete Lecturer Profile Route
+Route::get('ProfileViewLecturer/{lect_id}', 'App\Http\Controllers\LecturerController@deletelect')->name('deletelect');
+
+//Edit  Lecturer Profile Route
+Route::get('/ProfileViewLecturer/{lect_id}/ProfileLecturerEdit', 'App\Http\Controllers\LecturerController@vieweditlect');
+Route::post('/ProfileViewLecturer/{lect_id}/updatelect', 'App\Http\Controllers\LecturerController@updatelect');
 
 //Manage SV
 Route::get('SVbooking', function() {
@@ -108,7 +118,12 @@ Route::get('studList', function() {
 });
 
 
-//Manage Logbook
+//manage logbook
+Route::resource('logbooks', ProductController::class);
+
+
+
+/*//Manage Logbook
 Route::get('Logbook', function () {
     return view('Manage Logbook/Logbook');
 });
@@ -130,6 +145,7 @@ Route::get('LogbookLecturer', function () {
 Route::get('ViewLogbookLect', function () {
     return view('Manage Logbook/ViewLogbookLect');
 });
+*/
 
 //Manage Proposal
 //Lecturer
