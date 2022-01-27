@@ -41,50 +41,53 @@
             <div class="card shadow mb-4">
                 
                 <div class="card-body">
-                <a href="AddLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
+                <a href="add" class="d-none d-sm-inline-block fa-sm text-white-50">
                 <button type="button" class="butangUpdate btn btn-sm btn-primary">Add New Entry </button> </a><br><br><br>
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Student ID</th>
                                     <th>Student Name</th>
                                     <th>Meeting Date</th>
                                     <th>Start Time</th>
                                     <th>End Time</th>
-                                    <th> </th>
+                                    <th> Action </th>
                                 </tr>
                             </thead>
                             
 
                             <tbody>
                                 <!--Fetch data from database -->
-                                @foreach($data as $student)
-                                    <tr>
-                                        <td>{{$student->stud_matricID}}</td>
-                                        <td>{{$student->stud_name}}</td>
-                                        <td>{{$student->meeting_date}}</td>
-                                        <td>{{$student->start_time}}</td>
-                                        <td> 
-                                            <!--Button to update detail -> do update in controller -->
-                                            <a href="{{$student->inv_ID}}/updateDetail" class="btn btn-success btn-sm text-white edit" data-bs-toggle="modal" data-bs-target="#editModal"><span class="icon text-white-50">
-                                            <i class="fas fa-edit text-white-50"></i>
-                                                </span>EDIT</a>
-                                        </td>
-                                        <td>
-                                            <a href="{{$student->logbook_ID}}/ViewLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
-                                            <button type="button" class="butangView btn btn-sm btn-success">View </button> </a>
+                                @foreach($logbooks as $logbook)
+                                <tr>
+                                    <td>{{$logbook->logbook_ID}}</td>
+                                    <td>{{$logbook->stud_matricID}}</td>
+                                    <td>{{$logbook->stud_name}}</td>
+                                    <td>{{$logbook->meeting_date}}</td>
+                                    <td>{{$logbook->start_time}}</td>
+                                    <td>{{$logbook->end_time}}</td>
+                                    <td>
+                                        <form action="{{ route('logbooks.destroy',$logbook->logbook_ID) }}" method="POST">
                                             
-                                            <a href="EditLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
-                                            <button type="button" class="butangUpdate btn btn-sm btn-primary">Update </button> </a>
-                                            
-                                            <a href="DeleteLogbook" class="d-none d-sm-inline-block fa-sm text-white-50" onclick="return confirm('Are you sure want to delete?')">
-                                            <button type="button" class="butangDelete btn btn-sm btn-danger">Delete </button> </a>
-                                        </td>
-                                    </tr>
+                                            <a class="butangView btn btn-sm btn-success" href="{{ route('logbooks.show',$logbook->logbook_ID) }}">View</a>
+
+                                            <a class="butangUpdate btn btn-sm btn-primary" href="{{ route('logbooks.edit',$logbook->logbook_ID) }}">Edit</a>
+
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button type="submit" class="butangDelete btn btn-sm btn-danger" onclick="return confirm('Are you sure want to delete?')">Delete</button>
+                                        
+                                        </form>
+                                    </td>
+                                </tr>
                                 @endforeach
+
                             </tbody>
                         </table>
+                        
                     </div>
                 </div>
             </div>

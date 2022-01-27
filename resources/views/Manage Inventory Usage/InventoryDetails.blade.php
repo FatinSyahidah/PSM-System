@@ -95,56 +95,56 @@
         
                     <div class="modal-body" style="height:68vh;overflow-y: auto;">
                         <div class="form-group row">
-                            <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Inventory ID</label>
+                            <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Inventory ID</label> <!--Data inv id-->
                             <div class="col-sm-9">
                                 <input name="inv_ID" id="inv_ID" type="text"  class="form-control" value="{{$student->inv_ID}}" disabled>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Student Matric ID</label>
+                            <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Student Matric ID</label> <!--matric id data-->
                             <div class="col-sm-9">
                                 <input name="stud_matricID" id="stud_matricID" type="text"  class="form-control" disabled>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Name</label>
+                            <label for="exampleFormControlInput1" class="col-sm-3 col-form-label">Name</label>      <!--name data-->
                             <div class="col-sm-9">
                                 <input name="stud_name" id="stud_name" type="text"  class="form-control" disabled>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Inventory Name</label>
+                            <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Inventory Name</label> <!--inventory name data-->
                             <div class="col-sm-9">
                                 <input name="inv_name" id="inv_name" type="text" class="form-control" disabled>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Quantity</label>
+                            <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Quantity</label>       <!--quantity data-->
                             <div class="col-sm-9">
                                 <input name="quantity" id="quantity" type="text" class="form-control" disabled>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Pick Up Date</label>
+                            <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Pick Up Date</label> <!--pick up date data-->
                             <div class="col-sm-9">
                             <input name="pick_date" id="pick_date" type="date" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Return Date</label>
+                            <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Return Date</label>    <!--return date data-->
                             <div class="col-sm-9">
                             <input name="ret_date" id="ret_date" type="date" class="form-control" required>
                             </div>
                         </div>
                     
                         <div class="form-group row">
-                            <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Remark</label>
+                            <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Remark</label>     <!--remark data-->
                             <div class="col-sm-9">
                             <input name="remark" id="remark" type="text" class="form-control" required>
                             </div>
@@ -152,14 +152,51 @@
                     </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">SAVE</button>                 
+                            <button type="submit" class="btn btn-primary">SAVE</button>        <!--save button -->         
                         </form>
                         </div >
                     </div>
             </div>
         </div>
     </div>
+    <!-- script used in this page -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js"></script>
 
+        <!--data table script -->
+        <script>
+            $(document).ready(function($) {
+        
+        var table = $('#example').DataTable();
+
+        //start edit record
+        table.on('click','.edit', function() {
+
+            $tr = $(this).closest('tr');
+            if ($($tr).hasClass('child')){
+                $tr = $tr.prev('.parent');
+            }
+
+                var data = table.row($tr).data();
+                console.log(data);
+                //data value based on column name
+                $('#inv_ID').val(data[0]);
+                $('#stud_matricID').val(data[1]);
+                $('#stud_name').val(data[2]);
+                $('#inv_name').val(data[3]);
+                $('#quantity').val(data[4]);
+                $('#pick_date').val(data[5]);
+                $('#ret_date').val(data[6]);
+
+                $('#editForm').attr('action', '{{$student->inv_ID}}/updateDetail'); //update based on id
+                $('#editModal').modal('show');        //show modal form
+            });
+        });    
+        </script>
         </div>
     </body>
 </html>

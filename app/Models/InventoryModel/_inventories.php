@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class _inventories extends Model
 {
     use HasFactory;
+    //attribute to be fill
     protected $primaryKey = 'inv_ID';
     protected $fillable = [
         'stud_matricID',

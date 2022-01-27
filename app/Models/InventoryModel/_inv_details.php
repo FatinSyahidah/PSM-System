@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\LogbookModel;
+namespace App\Models\InventoryModel;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class _inv_details extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'detail_ID';
+    //attribute to be fill
+    protected $primaryKey = 'detail_ID'; 
     protected $fillable = [
         'inv_ID',
         'stud_matricID',

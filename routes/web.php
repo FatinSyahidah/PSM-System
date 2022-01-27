@@ -107,50 +107,54 @@ Route::post('/ProfileViewLecturer/{lect_id}/updatelect', 'App\Http\Controllers\L
 Route::get('SVbooking', function() {
     return view('Manage Supervisor Hunting/SVbooking');
 });
-Route::get('viewSVbooking', function() {
+Route::get('SVbookingStatus', function() {
     return view('Manage Supervisor Hunting/viewSVbooking');
 });
-Route::get('studRequest', function() {
+Route::get('StudentRequestList', function() {
     return view('Manage Supervisor Hunting/studRequest');
 });
-Route::get('studList', function() {
+Route::get('StudentList', function() {
     return view('Manage Supervisor Hunting/studList');
 });
 
 
-//manage logbook
-Route::resource('logbooks', ProductController::class);
+//Manage logbook
+//Route::resource('logbooks', LogbookController::class);
 
 
 
-/*//Manage Logbook
-Route::get('Logbook', function () {
-    return view('Manage Logbook/Logbook');
+//Manage Logbook
+Route::get('index', function () {
+    $logbooks = \App\Models\LogbookModel\logbooks::all();
+    return view('Manage Logbooks/index', compact('logbooks'));
 });
-Route::get('AddLogbook', function () {
-    return view('Manage Logbook/AddLogbook');
+Route::get('add', function () {
+    return view('Manage Logbooks/add');
 });
+
+Route::post('store','App\Http\Controllers\LogbookController@store');
 Route::get('EditLogbook', function () {
-    return view('Manage Logbook/EditLogbook');
+    return view('Manage Logbooks/EditLogbook');
 });
 Route::get('DeleteLogbook', function () {
-    return view('Manage Logbook/DeleteLogbook');
+    return view('Manage Logbooks/DeleteLogbook');
 });
 Route::get('ViewLogbook', function () {
-    return view('Manage Logbook/ViewLogbook');
+    return view('Manage Logbooks/ViewLogbook');
 });
 Route::get('LogbookLecturer', function () {
-    return view('Manage Logbook/LogbookLecturer');
+    return view('Manage Logbooks/LogbookLecturer');
 });
 Route::get('ViewLogbookLect', function () {
-    return view('Manage Logbook/ViewLogbookLect');
+    return view('Manage Logbooks/ViewLogbookLect');
 });
-*/
+
 
 //Manage Proposal
 //Lecturer
 Route::get('LectMainPg', function () {
-    return view('Manage Proposal/LectMainPg');
+    $proposal = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/LectMainPg', compact('list'));
 });
 
 //Student
@@ -158,7 +162,11 @@ Route::get('StdMainPg', function () {
     $proposal = \App\Models\ProposalModel\proposals::all();
     return view('Manage Proposal/StdMainPg', compact('proposal'));
 });
-Route::get('StdMainPg/{proposal_ID}', 'App\Http\Controllers\ProposalsController@delete')->name('delete');
+Route::get('newReq', function () {
+    $proposal = \App\Models\ProposalModel\proposals::all();
+    return view('Manage Proposal/newReq', compact('request'));
+});
+Route::get('StdMainPg\{proposal_ID}', 'App\Http\Controllers\ProposalsController@delete')->name('delete');
 Route::view('form', 'Manage Proposal/newReq');
 Route::post('submit', 'ProposalController@save');
 
@@ -196,12 +204,43 @@ Route::get('TitleList', function () {
 
 
 //Manage Inventory Usage
+//student 
 Route::get('RequestInventory', function () {
-    return view('Manage Inventory Usage/RequestInventory');
+    return view('Manage Inventory Usage/RequestInventory');     //return view interface to student request inventory page
 });
 
 Route::get('RequestStatus', function () {
-    return view('Manage Inventory Usage/RequestStatus');
+    return view('Manage Inventory Usage/RequestStatus');        //return view interface to student request status page
 });
 
-Route::post('create','App\Http\Controllers\InventoryController@create');
+Route::post('create','App\Http\Controllers\InventoryController@create');    //from interface to controller to insert data to interface
+
+Route::get('RequestStatus', function () {
+    $data = \App\Models\InventoryModel\_inventories::all();                 //return data from database to request status student interface
+    return view('Manage Inventory Usage/RequestStatus',compact('data'));
+});
+
+// Lecturer
+Route::get('StudentRequestStatus', function () {
+    $data = \App\Models\InventoryModel\_inventories::all();                                     //return data from database to request status lecturer interface
+    return view('Manage Inventory Usage/StudentRequestStatus',compact('data'));
+});
+
+Route::post('{inv_ID}/updateRequest','App\Http\Controllers\InventoryController@updateRequest');  //update student request status based on id
+
+Route::get('PickUpItem', function(){
+    $data = DB::select('select inv_ID, stud_matricID, stud_name, inv_name, quantity, req_status     
+    from _inventories
+    where req_status = "APPROVE"');
+    return view('Manage Inventory Usage/PickUpItem', compact('data'));                              //return data from database in pick up item page where request status = APPROVE
+});
+
+Route::post('{inv_ID}/add','App\Http\Controllers\InventoryController@add');                         //Lecturer insert pick up item data to database 
+
+//Technician
+Route::get('InventoryDetails', function () {
+    $data = \App\Models\InventoryModel\_inv_details::all();
+    return view('Manage Inventory Usage/InventoryDetails',compact('data'));                         // return pick up item data from database in page inevntory details
+});
+
+Route::post('{inv_ID}/updateDetail','App\Http\Controllers\InventoryController@updateDetail');       //technician update pick up item details
