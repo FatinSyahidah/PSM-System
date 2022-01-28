@@ -55,6 +55,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <!--Fetch data from database -->
                                     @foreach($data as $student)
                                         <tr>
                                             <td>{{$student->inv_ID}}</td>
@@ -64,6 +65,8 @@
                                             <td>{{$student->quantity}}</td>
                                             <td>{{$student->req_status}}</td>
                                             <td>
+                                                <!--Button to add detail -> do add in controller -->
+                                                <!--add based on inventory id -->
                                                 <a href="{{$student->inv_ID}}/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm edit" data-bs-toggle="modal" data-bs-target="#editModal"> <i class="fas fa-plus fa-sm text-white-50"></i>
                                                 ADD DETAILS</a>
                                                 

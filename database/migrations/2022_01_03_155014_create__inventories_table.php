@@ -13,9 +13,10 @@ class CreateInventoriesTable extends Migration
      */
     public function up()
     {
+        // create table & attributes of table
         Schema::create('_inventories', function (Blueprint $table) {
-                $table->increments('inv_ID');
-                $table->string('stud_matricID');
+                $table->increments('inv_ID');   // primary key of _inventories table
+                $table->string('stud_matricID');      
                 $table->string('stud_name');
                 $table->string('inv_name');
                 $table->integer('quantity');
@@ -31,6 +32,8 @@ class CreateInventoriesTable extends Migration
      *
      * @return void
      */
+
+     //function to drop if table already exists in database
     public function down()
     {
         Schema::dropIfExists('_inventories');

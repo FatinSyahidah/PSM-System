@@ -31,6 +31,7 @@
                 <div class="container-fluid">
                 <div class="card shadow mb-4">
                         <div class="card-header py-3">
+                            <!--table title -->
                             <h6 class="m-0 font-weight-bold text-primary">ADD PICK UP ITEM DETAILS</h6>
                         </div>
                         <div class="card-body">
@@ -63,6 +64,7 @@
                                                 <td>{{$student->ret_date}}</td>
                                                 <td> 
                                                     <!--Button to update detail -> do update in controller -->
+                                                    <!--update based on inventory id -->
                                                     <a href="{{$student->inv_ID}}/updateDetail" class="btn btn-success btn-sm text-white edit" data-bs-toggle="modal" data-bs-target="#editModal"><span class="icon text-white-50">
                                                     <i class="fas fa-edit text-white-50"></i>
                                                         </span>EDIT</a>

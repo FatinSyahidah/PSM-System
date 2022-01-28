@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class _inv_details extends Model
 {
     use HasFactory;
-    //attribute to be fill
-    protected $primaryKey = 'detail_ID'; 
-    protected $fillable = [
+    protected $primaryKey = 'detail_ID'; //primary key of _inv_details table
+    protected $fillable = [   //table attribute 
         'inv_ID',
         'stud_matricID',
         'stud_name',

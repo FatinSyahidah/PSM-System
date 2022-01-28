@@ -8,8 +8,9 @@ class CreateInvDetailsTable extends Migration
 {
     public function up()
     {
+        // create table & attributes of table
         Schema::create('_inv_details', function (Blueprint $table) {
-            $table->increments('detail_ID');
+            $table->increments('detail_ID');            // primary key of _inv_details table
             $table->string('inv_ID');
             $table->string('stud_matricID');
             $table->string('stud_name');
@@ -27,6 +28,7 @@ class CreateInvDetailsTable extends Migration
      *
      * @return void
      */
+    //function to drop if table already exists in database
     public function down()
     {
         Schema::dropIfExists('_inv_details');

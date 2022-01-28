@@ -9,9 +9,9 @@ class _inventories extends Model
 {
     use HasFactory;
     //attribute to be fill
-    protected $primaryKey = 'inv_ID';
-    protected $fillable = [
-        'stud_matricID',
+    protected $primaryKey = 'inv_ID';   //primary key of _inventories table
+    protected $fillable = [         
+        'stud_matricID',                //table attribute 
         'stud_name',
         'inv_name',
         'quantity',

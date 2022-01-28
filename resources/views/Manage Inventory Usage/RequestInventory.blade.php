@@ -34,7 +34,7 @@
                 </div> 
 
                 <div class="col-6">
-                <!-- Button trigger modal -->
+                <!-- Button trigger modal to fill request form -->
                     <button type="button"  class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <i class="fas fa-plus fa-sm text-white-50"></i> REQUEST
                     </button>
@@ -144,6 +144,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
+                <!-- Modal title -->
                 <h5 class="modal-title" id="exampleModalLabel">REQUEST INVENTORY</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
             </div>
