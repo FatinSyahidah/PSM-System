@@ -2,11 +2,35 @@
 
 @section('content')
 
+<!-- page for student view logbook list -->
 <!DOCTYPE html>
 <html>
     <head>
+    <title>Logbook-Student</title>
+
+        <!-- Custom fonts for this template -->
+        <link href="{{asset('admin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="{{asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
+
+        <!-- Custom styles for this page -->
+        <link href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+
+         <!-- Custom fonts for this template -->
+        
+         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.min.css"/>
+         
+         
+         <style>
+           
+	
+         </style>
+
     </head>
-    
     <body>
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -14,22 +38,18 @@
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Logbook</h1>
 
-        <!-- DataTales Example -->
-        <div class="card shadow mb-4">
-            
-            <div class="card-body"><br><br>
-                
-                <div class="row">
-                    <div class="col-lg-12 margin-tb">
-                        <div class="pull-left">
-                            <h2> Logbook Details</h2>
-                        </div>
-                        <div class="pull-right">
-                            <a class="btn btn-primary" href="{{ route('logbooks.index') }}"> Back</a>
-                        </div>
-                    </div>
-                </div>
-    
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+            <!--return alert message if data successfully updated -->
+            @if(session('success'))
+            <div class="alert alert-primary" role="alert">
+            {{session('success')}}
+            </div>
+            @endif
+
+            <!-- To fetch data -->
+            <div class="card-body">
+                <div class="table-responsive">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
@@ -88,21 +108,19 @@
                             {{ $logbook->action_plan }}
                         </div>
                     </div>
+
                 </div>
-                  
+                </div>
             </div>
-        </div>
+            </div>
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- /.container-fluid -->
+        <!-- End of Main Content -->
 
-</div>
-<!-- End of Main Content -->
-</body>
-
-<!-- Bootstrap core JavaScript-->
-<script src="{{asset('admin/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{asset('admin/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="{{asset('admin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
@@ -116,5 +134,7 @@
 
     <!-- Page level custom scripts -->
     <script src="{{asset('admin/js/demo/datatables-demo.js')}}"></script>
+    </body>
+</html>
 
 @endsection

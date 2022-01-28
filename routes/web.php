@@ -118,34 +118,38 @@ Route::get('studList', function() {
 });
 
 
-//manage logbook
-Route::resource('logbooks', ProductController::class);
 
+//Manage Logbook
+Route::get('StudentLogbook', function () {                     //for student to view logbook list
+    return view('Manage Logbooks/StudentLogbook');
+});
+Route::get('AddLogbook', function () {                  //for student to add new logbook entry in logbook form 
+    return view('Manage Logbooks/AddLogbook');
+});
 
+Route::post('StoreNewEntry','App\Http\Controllers\LogbookController@StoreNewEntry');   //to store new logbook data
 
-/*//Manage Logbook
-Route::get('Logbook', function () {
-    return view('Manage Logbook/Logbook');
+Route::post('ShowLogbook','App\Http\Controllers\LogbookController@ShowLogbook');   //to student view selected logbook entry data
+
+Route::get('StudentLogbook/{logbook_ID}', 'App\Http\Controllers\LogbookController@DeleteLogbook')->name('DeleteLogbook'); //to delete selected logbook entry
+
+Route::get('EditLogbook', function () {                 //for student to edit selected logbook entry
+    return view('Manage Logbook/EditLogbook');      
 });
-Route::get('AddLogbook', function () {
-    return view('Manage Logbook/AddLogbook');
+
+Route::get('LecturerLogbook', function () {             //for lecturer to view logbook list
+    return view('Manage Logbook/LecturerLogbook');
 });
-Route::get('EditLogbook', function () {
-    return view('Manage Logbook/EditLogbook');
+
+Route::post('LecturerShowLogbook','App\Http\Controllers\LogbookController@LecturerShowLogbook');   //to lecturer view selected logbook entry data
+/*
+Route::get('ViewLecturerLogbook', function () {                 //for lecturer to view logbook details
+    return view('Manage Logbook/ViewLecturerLogbook');       
 });
-Route::get('DeleteLogbook', function () {
-    return view('Manage Logbook/DeleteLogbook');
-});
-Route::get('ViewLogbook', function () {
-    return view('Manage Logbook/ViewLogbook');
-});
-Route::get('LogbookLecturer', function () {
-    return view('Manage Logbook/LogbookLecturer');
-});
-Route::get('ViewLogbookLect', function () {
-    return view('Manage Logbook/ViewLogbookLect');
-});
-*/
+
+Route::get('ViewStudentLogbook', function () {                 //for student to view logbook details
+    return view('Manage Logbook/ViewStudentLogbook');       
+}); */
 
 //Manage Proposal
 //Lecturer

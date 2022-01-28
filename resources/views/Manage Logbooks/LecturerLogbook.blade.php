@@ -112,9 +112,9 @@ button{margin:auto;}
                         <td>03/12/2021</td>
                         <td>1400</td>
                         <td>1500</td>
-                        <td>
-                            <a href="viewLogbook.html" class="d-none d-sm-inline-block fa-sm text-white-50">
-                            <button type="button" class="butangView">View </button> </a>											      
+                        <td> <<!--button to view logbook details-->>
+                            <a href="{{$logbook->logbook_ID}}/LecturerShowLogbook" method="POST" class="d-none d-sm-inline-block fa-sm text-white-50">         
+                            <button type="button" class="butangView btn btn-sm btn-success">View </button> </a>                                                                       
                         </td>
                     </tr>
                 </tbody>

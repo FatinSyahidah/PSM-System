@@ -2,6 +2,7 @@
 
 @section('content')
 
+<!-- page for student view logbook list -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,56 +40,60 @@
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
-                
-                <div class="card-body">
-                <a href="add" class="d-none d-sm-inline-block fa-sm text-white-50">
-                <button type="button" class="butangUpdate btn btn-sm btn-primary">Add New Entry </button> </a><br><br><br>
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Student ID</th>
-                                    <th>Student Name</th>
-                                    <th>Meeting Date</th>
-                                    <th>Start Time</th>
-                                    <th>End Time</th>
-                                    <th> Action </th>
-                                </tr>
-                            </thead>
-                            
+                <!--return alert message if data successfully updated -->
+            @if(session('success'))
+                <div class="alert alert-primary" role="alert">
+                {{session('success')}}
+                </div>
+            @endif
 
-                            <tbody>
-                                <!--Fetch data from database -->
-                                @foreach($logbooks as $logbook)
+            <div class="card-body">
+                <a href="AddLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">          <!-- button to go to logbook form to add new entry-->
+                <button type="button" class="butangUpdate btn btn-sm btn-primary">Add New Entry </button> </a><br><br><br>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Student Name</th>
+                                <th>Meeting Date</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                                <th>Action </th>
+                            </tr>
+                        </thead>
+                        
+
+                        <tbody>
+                            <!--Fetch data from database -->
+                            @foreach($entry as $logbook)
                                 <tr>
-                                    <td>{{$logbook->logbook_ID}}</td>
                                     <td>{{$logbook->stud_matricID}}</td>
                                     <td>{{$logbook->stud_name}}</td>
                                     <td>{{$logbook->meeting_date}}</td>
                                     <td>{{$logbook->start_time}}</td>
                                     <td>{{$logbook->end_time}}</td>
                                     <td>
-                                        <form action="{{ route('logbooks.destroy',$logbook->logbook_ID) }}" method="POST">
-                                            
-                                            <a class="butangView btn btn-sm btn-success" href="{{ route('logbooks.show',$logbook->logbook_ID) }}">View</a>
-
-                                            <a class="butangUpdate btn btn-sm btn-primary" href="{{ route('logbooks.edit',$logbook->logbook_ID) }}">Edit</a>
-
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <button type="submit" class="butangDelete btn btn-sm btn-danger" onclick="return confirm('Are you sure want to delete?')">Delete</button>
+                                        <a href="{{$logbook->logbook_ID}}/ShowLogbook" method="POST" class="d-none d-sm-inline-block fa-sm text-white-50">         
+                                        <button type="button" class="butangView btn btn-sm btn-success">View </button> </a>         <<!--button to view logbook details-->>
                                         
-                                        </form>
+                                        <a href="EditLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
+                                        <button type="button" class="butangUpdate btn btn-sm btn-primary">Edit </button> </a>     <<!--button to update logbook entry-->>
+                                
+                                        @csrf
+                                        @method('deletelect')
+                                        <div class = "col-12">
+                                            <a href = "{{ route('DeleteLogbook', ['logbook_ID' => $logbook]) }}">
+                                            <button type="submit" class="butangDelete btn btn-sm btn-danger" onclick="return confirm('Are you sure want to delete?')">Delete</button>    
+                                            </a>
+                                    
+                                        </div>
                                     </td>
                                 </tr>
-                                @endforeach
-
-                            </tbody>
-                        </table>
-                        
-                    </div>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

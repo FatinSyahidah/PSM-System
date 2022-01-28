@@ -80,10 +80,11 @@
 							<div class="card shadow mb-4">
                         
 							<div class="card-body">
-                                <form action="{{ route('logbooks.update',$logbook->logbook_ID) }}" method="POST">
+                                <form action="{{ route('UpdateLogbook',$logbook->logbook_ID) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-                            
+                                    ($entry as $logbook)
+                                    
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12 col-md-12">
                                             <div class="form-group">
@@ -142,11 +143,12 @@
                                         </div>
 
                                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                                            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure want to update the entry?')">Submit</button>
+                                            <a href="{{$logbook->logbook_ID}}/UpdateLogbook" class="d-none d-sm-inline-block fa-sm text-white-50">
+                                            <button type="button" class="butangUpdate btn btn-sm btn-primary">Update </button> </a>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                                            <a href="logbooks.index" onclick="return confirm('Are you sure want to cancel updating?')">
+                                            <a href="StudentLogbook" onclick="return confirm('Are you sure want to cancel updating?')">
 								            <button type="button" class="butangBack btn btn-close"> Back </button>
                                         </div>
 

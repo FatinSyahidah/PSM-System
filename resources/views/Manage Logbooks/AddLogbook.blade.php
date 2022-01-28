@@ -46,7 +46,7 @@
                 <div class="card-body">
                     
                 
-                <form action="store" method="POST">
+                <form action="StoreNewEntry" method="POST">
                     @csrf
                 
                     <div class="row">
@@ -96,6 +96,13 @@
                             <div class="form-group">
                                 <strong>Discussion Details:</strong>
                                 <textarea class="form-control" style="height:150px" name="discussion_details" placeholder="Discussion Details "></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Action Plan:</strong>
+                                <textarea class="form-control" style="height:150px" name="action_plan" placeholder="Action Plan "></textarea>
                             </div>
                         </div>
 
