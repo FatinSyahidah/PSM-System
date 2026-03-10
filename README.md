@@ -20,3 +20,13 @@ The module was implemented following the MVC architecture using Laravel framewor
 
 - Software Requirement Specification (SRS)
 - Software Design Document (SDD)
+
+## System Modules
+
+- Manage Meeting
+- Manage Profile
+- Manage Supervisor Hunting
+- Manage Logbook
+- Manage Proposal
+- Manage Title
+- Manage Inventory Usage
