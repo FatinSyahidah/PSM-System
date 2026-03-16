@@ -30,3 +30,10 @@ The module was implemented following the MVC architecture using Laravel framewor
 - Manage Proposal
 - Manage Title
 - Manage Inventory Usage
+
+## Technologies Used
+
+- Laravel
+- PHP
+- MySQL
+- Bootstrap
